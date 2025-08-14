@@ -5,9 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hospital Regional Dr. Luis A. Vargas</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Iconos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
@@ -61,13 +59,28 @@
       text-align: center;
     }
 
-    .gallery img {
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+    /* Carrusel */
+    #carouselGaleria {
+      max-width: 800px;
+      margin: auto;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    #carouselGaleria .carousel-inner {
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #carouselGaleria img {
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      padding: 10px;
     }
   </style>
 </head>
@@ -77,10 +90,12 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Hospital Regional Dr. Luis A. Vargas</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="images/logo.jpeg" alt="Logo" height="40" class="me-2">
+        Hospital Regional Dr. Luis A. Vargas
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span
+          class="navbar-toggler-icon"></span></button>
       <div id="menu" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
@@ -94,7 +109,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Portada -->
   <section class="hero">
     <div class="hero-content">
       <h1 class="fw-bold">Cuidamos tu salud con compromiso</h1>
@@ -108,110 +123,547 @@
     <p>El Hospital Regional Dr. Luis A. Vargas ofrece atención médica integral con un equipo profesional comprometido
       con la salud de nuestra comunidad.</p>
   </section>
-
   <!-- Servicios -->
   <section id="servicios" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-primary fw-bold mb-4">Servicios</h2>
       <div class="row g-4">
+
+        <!-- Clínica Médica -->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
-            <i class="bi bi-heart-pulse"></i>
+            <i class="bi bi-heart-pulse fs-1 text-primary"></i>
             <h5>Clínica Médica</h5>
-            <p>Atención médica general con especialistas de amplia experiencia.</p>
+            <p>Atención general y especializada para adultos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalClinica">Ver más</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card card-service text-center p-3">
-            <i class="bi bi-emoji-smile"></i>
-            <h5>Pediatría</h5>
-            <p>Cuidado integral de niños y adolescentes.</p>
+        <div class="modal fade" id="modalClinica" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Clínica Médica</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales: </b> <br>
+                <b>Dra. Acosta Ana</b> <br>
+                <b>Dra. Pino Ailicec</b> <br>
+                <b>Dra. Saracho Araceli</b> <br>
+                <b>Dr. Contreras Hugo</b> <br>
+                <b>Dr. Maturano Jorge</b> <br>
+                <b>Dr. Tula Juan Jose</b> <br>
+                <b>Dra. Mena Cristina</b> <br>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Traumatología -->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
-            <i class="bi bi-gender-female"></i>
+            <i class="bi bi-person-walking fs-1 text-primary"></i>
+            <h5>Traumatología</h5>
+            <p>Tratamiento de lesiones óseas y musculares.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalTrauma">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalTrauma" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Traumatología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dr. Peralta Carlos</b> <br>
+                   Lunes: <br>
+                <b>Dr. Figueroa Jose </b> <br>
+                  Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+                <b>Dr. Pujol Antonio </b> <br>
+                  Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+                <b>Dr. Aguilar Santiago </b> <br>
+                  Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ginecología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-gender-female fs-1 text-primary"></i>
             <h5>Ginecología</h5>
-            <p>Atención especializada en salud femenina.</p>
+            <p>Salud integral de la mujer.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalGine">Ver más</button>
           </div>
         </div>
+        <div class="modal fade" id="modalGine" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Ginecología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dra. Peñafiel Patricia</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Dra. Michalzuk Melisa </b> <br>
+                    Lunes a Viernes: 08:00 a 12:00<br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bioimagen -->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
-            <i class="bi bi-camera"></i>
+            <i class="bi bi-camera fs-1 text-primary"></i>
             <h5>Bioimagen</h5>
-            <p>Estudios de diagnóstico por imágenes.<br><a href="#" class="text-primary">Ver estudios</a></p>
+            <p>Diagnóstico por imágenes y resultados online.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalBio">Ver más</button>
           </div>
         </div>
+        <div class="modal fade" id="modalBio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Bioimagen</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> <br>
+                Lic. Aciar Beatriz, Lic. Vargas Belen, Lic. Quiroga Patricia, Lic. Herrero Matilde<br>
+                <b>Horarios:</b> <br>
+                  Lunes a Viernes 08:00 - 18:00<br>
+                <a href="https://htalvargas.imageweb.ar/login.html" target="_blank">Ver estudios en línea</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laboratorio -->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
-            <i class="bi bi-hospital"></i>
-            <h5>Emergencias 24hs</h5>
-            <p>Atención de urgencias en todo momento.</p>
+            <i class="bi bi-droplet fs-1 text-primary"></i>
+            <h5>Laboratorio</h5>
+            <p>Análisis clínicos de rutina y especializados.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalLab">Ver más</button>
           </div>
         </div>
+        <div class="modal fade" id="modalLab" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Laboratorio</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> <br>
+                 Bioq. Herrera Gustavo, Bioq. Brahim Ludmila, Bioq. Meriles Mabel <br>
+                <b>Horarios:</b><br>
+                 Lunes a Viernes 07:00 - 12:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Farmacia -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-capsule fs-1 text-primary"></i>
+            <h5>Farmacia</h5>
+            <p>Dispensación de medicamentos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalFarmacia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalFarmacia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Farmacia</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b><br>
+                  Farm. Corsi Veronica<br>
+                <b>Horarios:</b><br> 
+                  Lunes a Viernes 08:00 a 13:00 - 14:00 a 19:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pediatría -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-emoji-smile fs-1 text-primary"></i>
+            <h5>Pediatría</h5>
+            <p>Atención integral para niños y adolescentes.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalPedia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalPedia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Pediatría</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dra. Faciano Gabriela</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Dra. Delgado Maria </b> <br>
+                    Lunes, Martes, Jueves, Viernes: 08:00 a 12:00<br>
+                <b>Dra. Saracho Mabel</b> <br>
+                   Lunes y Martes: 14:00 a 18:00 <br>
+                   Miercoles: 08:00 a 12:00 <br>
+                <b>Dra. Fernandez Fernanda</b> <br>
+                   Martes y Jueves: 14:00 a 18:00 <br>
+                <b>Dra. Morelli Ayelen</b> <br>
+                    Consultar Fecha y Horario <br>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vacunatorio -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-syringe fs-1 text-primary"></i>
+            <h5>Vacunatorio</h5>
+            <p>Aplicación de vacunas del calendario y especiales.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalVacunatorio">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalVacunatorio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Vacunatorio</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios de Atencion</b> <br>
+                   Lunes a Viernes: 07:00 a 13:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Obstetricia -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-hearts fs-1 text-primary"></i>
+            <h5>Obstetricia</h5>
+            <p>Atención y seguimiento durante el embarazo.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalObstetricia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalObstetricia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Obstetricia</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Delgado Yanina</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Condori Alejandra </b> <br>
+                    Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Chaile Maria</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Medina Gerson</b> <br>
+                   Lunes a Viernes: 14:00 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cardiología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-heart fs-1 text-primary"></i>
+            <h5>Cardiología</h5>
+            <p>Diagnóstico y tratamiento de enfermedades del corazón.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalCardio">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalCardio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Cardiología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. </b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio Social -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-people fs-1 text-primary"></i>
+            <h5>Servicio Social</h5>
+            <p>Asesoramiento y gestión de recursos sociales.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalSocial">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalSocial" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Servicio Social</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Lopez Bernardina</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nutrición -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-apple fs-1 text-primary"></i>
+            <h5>Nutrición</h5>
+            <p>Asesoramiento nutricional y planes alimentarios.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalNutricion">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalNutricion" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Nutrición</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Salcedo Daniela</b> <br>
+                   Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Checabaez Mariel</b> <br>
+                    Lunes a Viernes: 14:00 a 18:00<br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Odontología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-tooth fs-1 text-primary"></i>
+            <h5>Odontología</h5>
+            <p>Tratamientos dentales y de salud bucal.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalOdonto">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalOdonto" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Odontología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> Dr. Mario Pérez, Dra. Paula Silva<br>
+                <b>Horarios:</b> Lunes a Viernes 09:00 - 17:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enfermería -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-thermometer-half fs-1 text-primary"></i>
+            <h5>Enfermería</h5>
+            <p>Atención y cuidado de pacientes hospitalizados y ambulatorios.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalEnfermeria">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalEnfermeria" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Enfermería</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> Lic. Mónica Pérez, Lic. Luis Morales<br>
+                <b>Horarios:</b> Turnos rotativos 24/7
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internación -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-hospital fs-1 text-primary"></i>
+            <h5>Internación</h5>
+            <p>Salas equipadas para la recuperación de pacientes.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalInternacion">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalInternacion" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Internación</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Encargados:</b> Dr. Alberto Fernández, Dra. Julia Romero<br>
+                <b>Horarios:</b> 24/7 según disponibilidad
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Adultos -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-badge fs-1 text-primary"></i>
+            <h5>Admisión Adultos</h5>
+            <p>Registro y recepción de pacientes adultos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalAdmAdultos">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalAdmAdultos" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Admisión Adultos</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Encargados:</b> Lic. Juan Rivas, Lic. Ana Suárez<br>
+                <b>Horarios:</b> Lunes a Viernes 08:00 - 18:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Pediátrica -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-badge fs-1 text-primary"></i>
+            <h5>Admisión Pediátrica</h5>
+            <p>Registro y recepción de pacientes pediátricos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalAdmPedia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalAdmPedia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Admisión Pediátrica</h5><button class="btn-close"
+                  data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Encargados:</b> Lic. Carolina Díaz, Lic. Pablo Herrera<br>
+                <b>Horarios:</b> Lunes a Viernes 08:00 - 18:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fonoaudiología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-mic fs-1 text-primary"></i>
+            <h5>Fonoaudiología</h5>
+            <p>Evaluación y tratamiento de trastornos del habla y audición.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalFono">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalFono" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Fonoaudiología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> Lic. Miriam Torres, Lic. Lucas Ríos<br>
+                <b>Horarios:</b> Lunes a Viernes 09:00 - 15:00
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+
 
   <!-- Turnos -->
   <section id="turnos" class="py-5 container">
     <h2 class="text-primary fw-bold mb-4">Solicitar Turno</h2>
     <form id="turnoForm" class="row g-3">
-      <div class="col-md-6">
-        <label class="form-label">Apellido y Nombre</label>
-        <input type="text" class="form-control" id="nombre" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">DNI</label>
-        <input type="text" class="form-control" id="dni" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" id="fechaNacimiento" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Domicilio</label>
-        <input type="text" class="form-control" id="domicilio" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Historia Clínica</label>
-        <input type="text" class="form-control" id="historia" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Especialidad</label>
+      <div class="col-md-6"><label class="form-label">Apellido y Nombre</label><input type="text" class="form-control"
+          id="nombre" required></div>
+      <div class="col-md-6"><label class="form-label">DNI</label><input type="text" class="form-control" id="dni"
+          required></div>
+      <div class="col-md-6"><label class="form-label">Fecha de Nacimiento</label><input type="date" class="form-control"
+          id="fechaNacimiento" required></div>
+      <div class="col-md-6"><label class="form-label">Domicilio</label><input type="text" class="form-control"
+          id="domicilio" required></div>
+      <div class="col-md-6"><label class="form-label">Historia Clínica</label><input type="text" class="form-control"
+          id="historia" required></div>
+      <div class="col-md-6"><label class="form-label">Especialidad</label>
         <select class="form-select" id="especialidad" required>
           <option value="">Seleccione</option>
           <option value="Clinica">Clínica Médica</option>
           <option value="Cardiologia">Cardiología</option>
           <option value="Pediatria">Pediatría</option>
+          <option value="Odontologia">Odontología</option>
           <option value="Ginecologia">Ginecología</option>
           <option value="Bioimagen">Bioimagen</option>
           <option value="Traumatologia">Traumatología</option>
         </select>
       </div>
-      <div class="col-md-6">
-        <label class="form-label">Profesional</label>
+      <div class="col-md-6"><label class="form-label">Profesional</label>
         <select class="form-select" id="profesional" required>
           <option value="">Seleccione especialidad primero</option>
         </select>
       </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary w-100">Enviar por WhatsApp</button>
-      </div>
+      <div class="col-12"><button type="submit" class="btn btn-primary w-100">Enviar por WhatsApp</button></div>
     </form>
   </section>
 
   <!-- Galería -->
   <section id="galeria" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-primary fw-bold mb-4">Galería</h2>
-      <div class="row g-3 gallery">
-        <div class="col-sm-6 col-md-4"><img src="images/foto1.jpeg" class="img-fluid" alt=""></div>
-        <div class="col-sm-6 col-md-4"><img src="images/foto2.jpeg" class="img-fluid" alt=""></div>
-        <div class="col-sm-6 col-md-4"><img src="images/foto3.jpeg" class="img-fluid" alt=""></div>
+      <h2 class="text-primary fw-bold mb-4 text-center">Galería</h2>
+      <div class="row g-3">
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto1.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 1"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto2.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 2"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto3.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 3"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto4.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 4"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto5.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 5"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto6.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 6"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Noticias -->
   <section id="noticias" class="py-5 container">
@@ -219,92 +671,115 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="images/noticia1.jpg" class="card-img-top" alt="">
+          <img src="images/noticias1.jpeg" class="card-img-top" alt="">
           <div class="card-body">
-            <h5 class="card-title">Nueva sala de emergencias</h5>
-            <p class="card-text">Hemos inaugurado una nueva sala equipada con tecnología de última generación...</p>
+            <h5 class="card-title">#Elegir Saber</h5>
+            <p class="card-text">Continuamos recorriendo instituciones....</p>
             <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#noticia1Modal">Leer más</button>
           </div>
         </div>
       </div>
-      <!-- Modal Noticia 1 -->
-      <div class="modal fade" id="noticia1Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal fade" id="noticia1Modal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Nueva sala de emergencias</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              <h5 class="modal-title">#ElegíSaber</h5><button class="btn-close"
+                data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-              <p>El Hospital Regional Dr. Luis A. Vargas ha inaugurado una sala de emergencias con equipos de última
-                generación, diseñada para atender a pacientes críticos con rapidez y eficiencia. Cuenta con 10 camas
-                totalmente equipadas, área de shock room y personal médico especializado disponible las 24 horas.</p>
-              <p>Esta mejora forma parte de nuestro plan de modernización para brindar un servicio de calidad a toda la
-                comunidad.</p>
+              <p>Hoy nuestro equipo del programa #ElegíSaber llegó al Concejo Deliberante, donde brindamos una charla informativa y realizamos test rápidos de VIH. <br>
+                <br>
+              🧪 Apostamos a la prevención, el acceso a la información y el testeo voluntario como herramientas clave para el cuidado de la salud, sin prejuicios. <br>
+              <br>
+              💪Agradecemos al personal del Concejo por su compromiso, colaboración y participación activa en este proyecto</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Ejemplo segunda noticia -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/noticia2.jpeg" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Campaña de vacunación</h5>
-            <p class="card-text">Se realizará una campaña de vacunación gratuita durante el mes de septiembre...</p>
-            <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#noticia2Modal">Leer más</button>
+  </section>
+
+  <!-- Emergencias -->
+  <section id="emergencias" class="py-5" style="background-color: #ffebee;">
+    <div class="container text-center">
+      <h2 class="fw-bold text-danger mb-4">Números de Emergencia</h2>
+      <div class="row g-4">
+        <!-- Guardia Hospital -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-white">
+            <i class="bi bi-hospital fs-1 text-danger"></i>
+            <h5 class="mt-3">Guardia Hospital</h5>
+            <p class="fs-4 fw-bold text-danger">107</p>
           </div>
         </div>
-      </div>
-      <!-- Modal Noticia 2 -->
-      <div class="modal fade" id="noticia2Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Campaña de vacunación</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <p>Durante todo septiembre estaremos realizando una campaña de vacunación gratuita para toda la comunidad,
-                incluyendo vacunas contra la gripe, COVID-19 y neumonía.</p>
-              <p>La atención se brindará de lunes a viernes de 8 a 17 horas, sin necesidad de turno previo. Recuerde
-                traer su carnet de vacunación.</p>
-            </div>
+        <!-- Policía -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-white">
+            <i class="bi bi-shield-shaded fs-1 text-primary"></i>
+            <h5 class="mt-3">Policía</h5>
+            <p class="fs-4 fw-bold text-primary">911</p>
+          </div>
+        </div>
+        <!-- Bomberos -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-white">
+            <i class="bi bi-fire fs-1 text-warning"></i>
+            <h5 class="mt-3">Bomberos</h5>
+            <p class="fs-4 fw-bold text-warning">100</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- Contacto -->
-  <section id="contacto" class="py-5 bg-light">
+  <section id="contacto" class="py-5 bg-light text-center">
     <div class="container">
       <h2 class="text-primary fw-bold mb-4">Contacto</h2>
+
       <p><i class="bi bi-telephone"></i> (123) 456-7890</p>
       <p><i class="bi bi-envelope"></i> contacto@hospitalvargas.com</p>
       <p><i class="bi bi-geo-alt"></i> Calle Ejemplo 123, Ciudad</p>
 
-      <!-- Mapa Google -->
-      <div class="ratio ratio-16x9">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.479270065803!2d-66.0490186245679!3d-26.697131776776367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9421e52d34a352bb%3A0x3756acc45c097098!2sHospital%20Santa%20Mar%C3%ADa%20Dr.%20Luis%20Alberto%20Vargas!5e0!3m2!1ses-419!2sar!4v1754961290787!5m2!1ses-419!2sar"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <!-- Redes sociales -->
+      <div class="mt-4">
+        <h5 class="text-primary fw-bold">Síguenos en redes sociales</h5>
+        <a href="https://www.facebook.com/" target="_blank" class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-facebook" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-instagram" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://wa.me/5491112345678" target="_blank" class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-whatsapp" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" class="text-decoration-none text-dark">
+          <i class="bi bi-youtube" style="font-size: 1.8rem;"></i>
+        </a>
+      </div>
+
+      <!-- Mapa -->
+      <div class="ratio ratio-16x9 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
+
+
+
   <footer>
     <p>© 2025 Hospital Regional Dr. Luis A. Vargas - Todos los derechos reservados</p>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
     const profesionalesPorEspecialidad = {
       "Clinica": ["Dr. Juan Pérez", "Dra. María López"],
       "Cardiologia": ["Dr. Carlos Gómez", "Dra. Ana Ruiz"],
       "Pediatria": ["Dr. Pablo Torres", "Dra. Laura Fernández"],
+      "Odontologia": ["Dr. Mario Díaz", "Dra. Carla Ríos"],
       "Ginecologia": ["Dra. Sofía Martínez", "Dr. Ernesto Rivas"],
       "Bioimagen": ["Lic. Marta Sosa", "Lic. Andrés Vega"],
       "Traumatologia": ["Dr. Javier Castro", "Dra. Paula Méndez"]
@@ -343,14 +818,27 @@
       const nacimiento = new Date(fechaNacimiento);
       let edad = hoy.getFullYear() - nacimiento.getFullYear();
       const mes = hoy.getMonth() - nacimiento.getMonth();
-      if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
-        edad--;
+      if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) { edad--; }
+
+      const numeroAdultos = "5491112345678";
+      const numeroPediatria = "5491112349999";
+      const numeroOdontologia = "5491112348888";
+
+      if (especialidad === "Pediatria") {
+        if (edad >= 15) { alert("Pediatría es solo para menores de 15 años."); return; }
+        enviarWhatsApp(numeroPediatria);
+      } else if (especialidad === "Clinica") {
+        if (edad < 15) { alert("Clínica Médica es solo para mayores de 15 años."); return; }
+        enviarWhatsApp(numeroAdultos);
+      } else if (especialidad === "Odontologia") {
+        if (edad < 15) { alert("Odontología es solo para mayores de 15 años."); return; }
+        enviarWhatsApp(numeroOdontologia);
+      } else {
+        enviarWhatsApp(numeroAdultos);
       }
 
-      const numeroAdultos = "+543815976990";
-      const numeroPediatria = "5491112349999";
-
-      const mensaje = `Solicitud de turno:
+      function enviarWhatsApp(numero) {
+        const mensaje = `Solicitud de turno:
 Nombre: ${nombre}
 DNI: ${dni}
 Fecha Nacimiento: ${fechaNacimiento} (${edad} años)
@@ -358,14 +846,9 @@ Domicilio: ${domicilio}
 Historia Clínica: ${historia}
 Especialidad: ${especialidad}
 Profesional: ${profesional}`;
-
-      let url;
-      if (especialidad === "Pediatria" && edad < 15) {
-        url = `https://wa.me/${numeroPediatria}?text=${encodeURIComponent(mensaje)}`;
-      } else {
-        url = `https://wa.me/${numeroAdultos}?text=${encodeURIComponent(mensaje)}`;
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
       }
-      window.open(url, '_blank');
     });
   </script>
 </body>
