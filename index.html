@@ -7,6 +7,7 @@
   <title>Hospital Regional Dr. Luis A. Vargas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
   <style>
@@ -14,13 +15,17 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .navbar {
-      background: linear-gradient(135deg, #0099cc, #0077aa);
+    .navbar-brand span {
+      font-size: 1rem;
     }
 
-    .navbar .nav-link {
-      color: white !important;
+    .navbar-nav .nav-link {
       font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffd700;
     }
 
     .hero {
@@ -93,30 +98,37 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
-        <img src="images/logo1.jpeg" alt="Logo" height="40" class="me-2">
-        Hospital Regional Dr. Luis A. Vargas
+      <!-- Logo y nombre -->
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+        <img src="images/logo1.jpeg" alt="Logo" height="40" class="me-2 rounded-circle">
+        <span>Hospital Regional Dr. Luis A. Vargas</span>
       </a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+      <!-- Botón hamburguesa para móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="menu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto me-3">
+
+      <!-- Links y buscador -->
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#turnos">Turnos</a></li>
           <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
           <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nuestro-equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
-        <!-- 🔍 Buscador agregado -->
-        <!-- Buscador con resultados en modal -->
-        <form class="d-flex ms-3" role="search" onsubmit="buscarGlobal(event)">
-          <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar en todo..."
-            aria-label="Buscar">
-          <button class="btn btn-outline-light" type="submit">Buscar</button>
+
+        <!-- Buscador -->
+        <form class="d-flex mt-2 mt-lg-0 ms-lg-3" role="search" onsubmit="buscarGlobal(event)">
+          <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar..." aria-label="Buscar">
+          <button class="btn btn-light" type="submit">Buscar</button>
         </form>
       </div>
     </div>
@@ -163,20 +175,20 @@
                 <b>Profesionales y Horarios </b><br>
                 <br>
                 <b>Dra. Acosta Tapia Ana Victoria</b><br>
-                  Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
                 <b>Dra. Pino Ailicec </b><br>
-                   Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
                 <b>Dra. Saracho Araceli</b><br>
-                  Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
                 <b>Dr. Contreras Hugo </b><br>
-                   Lunes, Martes, Jueves, Viernes: 14hs a 18hs <br>
-                   Miercoles: 08hs a 12hs <br>  
+                Lunes, Martes, Jueves, Viernes: 14hs a 18hs <br>
+                Miercoles: 08hs a 12hs <br>
                 <b>Dr. Maturano Jorge </b><br>
-                  Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
                 <b>Dr. Tula Juan Jose </b><br>
-                  Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
                 <b> Dra. Mena Cristina </b><br>
-                  Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
               </div>
             </div>
           </div>
@@ -351,28 +363,34 @@
           </div>
         </div>
 
-        <!-- Vacunatorio -->
+        <!--vacunatorio-->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
-            <i class="bi bi-syringe fs-1 text-primary"></i>
+            <!-- Ícono cambiado a escudo médico -->
+            <i class="bi bi-shield-plus fs-1 text-primary"></i>
             <h5>Vacunatorio</h5>
             <p>Aplicación de vacunas del calendario y especiales.</p>
             <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalVacunatorio">Ver más</button>
           </div>
         </div>
+
         <div class="modal fade" id="modalVacunatorio" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Vacunatorio</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                <!-- Ícono también en el modal -->
+                <h5 class="modal-title"><i class="bi bi-shield-plus me-2"></i>Vacunatorio</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <b>Horarios de Atencion</b> <br>
+                <b>Horarios de Atención</b> <br>
                 Lunes a Viernes: 07:00 a 13:00 <br>
               </div>
             </div>
           </div>
         </div>
+
+
 
         <!-- Obstetricia -->
         <div class="col-md-4">
@@ -457,31 +475,37 @@
         <!-- Odontología -->
         <div class="col-md-4">
           <div class="card card-service text-center p-3">
+            <!-- Ícono de odontología -->
             <i class="bi bi-tooth fs-1 text-primary"></i>
             <h5>Odontología</h5>
             <p>Tratamientos dentales y de salud bucal.</p>
             <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalOdonto">Ver más</button>
           </div>
         </div>
+
+        <!-- Modal Odontología -->
         <div class="modal fade" id="modalOdonto" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Odontología</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                <!-- Ícono también en el título del modal -->
+                <h5 class="modal-title"><i class="bi bi-tooth me-2"></i>Odontología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
                 <b>Profesionales y Horarios</b> <br>
                 <b>Dra. Palacios Julia</b> <br>
-                Lunes, Miercoles y Viernes: 08:00 a 12:00<br>
+                Lunes, Miércoles y Viernes: 08:00 a 12:00<br>
                 <b>Dra. Maturano Rosana</b> <br>
-                Martes y jueves: 08:00 a 12:00 <br>
-                Lunes, Miercoles y Viernes: 14:00 a 18:00 <br>
-                <b>Dra. Chaile Maria Rosana </b> <br>
+                Martes y Jueves: 08:00 a 12:00 <br>
+                Lunes, Miércoles y Viernes: 14:00 a 18:00 <br>
+                <b>Dra. Chaile María Rosana</b> <br>
                 Lunes a Viernes: 14:00 a 18:00 <br>
               </div>
             </div>
           </div>
         </div>
+
 
         <!-- Enfermería -->
         <div class="col-md-4">
@@ -676,8 +700,65 @@
                 <div class="col-md-4">
                   <div class="card text-center p-3 shadow-sm">
                     <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
-                    <h6 class="mt-3">Dra. Marta Díaz</h6>
-                    <p>Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
                   </div>
                 </div>
               </div>
@@ -1946,9 +2027,17 @@ Profesional: ${profesional}`;
     });
 
 
+    // Función para quitar tildes
+    function quitarTildes(texto) {
+      return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
     function buscarGlobal(event) {
       event.preventDefault();
-      const termino = document.getElementById('buscador').value.toLowerCase().trim();
+      const termino = quitarTildes(document.getElementById('buscador').value.trim());
       const lista = document.getElementById('listaResultados');
       lista.innerHTML = '';
 
@@ -1957,18 +2046,17 @@ Profesional: ${profesional}`;
         return;
       }
 
-      // Seleccionamos todos los elementos relevantes
+      // Buscar en todos los textos relevantes
       const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
-
       let coincidencias = [];
 
       elementos.forEach(el => {
-        const texto = el.textContent.toLowerCase();
+        const texto = quitarTildes(el.textContent);
         if (texto.includes(termino)) {
-          const idDestino = el.closest('section')?.id || el.id || null;
+          const seccion = el.closest('section')?.id || '';
           coincidencias.push({
-            texto: el.textContent.trim().substring(0, 80) + '...',
-            id: idDestino
+            texto: el.textContent.trim().substring(0, 120) + '...',
+            id: seccion
           });
         }
       });
@@ -1992,10 +2080,8 @@ Profesional: ${profesional}`;
           lista.appendChild(enlace);
         });
 
-        // Mostrar modal con resultados
         const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
         modal.show();
-
       } else {
         lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
         const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
