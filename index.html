@@ -8,6 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
 
@@ -99,6 +101,36 @@
 
 <body>
 
+<!-- Navbar fijo adaptable -->
+<nav class="navbar navbar-dark bg-success fixed-top py-2 shadow-sm">
+  <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+
+    <!-- Teléfono de guardia -->
+    <div class="text-white fw-bold mb-2 mb-md-0">
+      <i class="bi bi-hospital me-2"></i> Guardias 24/7
+      <a href="tel:107" class="text-white text-decoration-none ms-3">
+        <i class="bi bi-telephone me-1"></i> 107
+      </a> /
+      <a href="tel:03838420263" class="text-white text-decoration-none ms-1">
+        (03838) 420263
+      </a>
+    </div>
+
+    <!-- Buscador siempre visible -->
+    <form class="d-flex mt-2 mt-md-0" style="max-width: 300px; width: 100%;" onsubmit="buscarDesdeTop(event)">
+      <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar..." aria-label="Buscar" id="topSearch">
+      <button class="btn btn-light btn-sm" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+
+  </div>
+</nav>
+
+<!-- Espaciador para compensar navbar fijo -->
+<div style="height: 75px;"></div>
+
+  
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
       <!-- Logo y nombre -->
@@ -124,17 +156,9 @@
           <li class="nav-item"><a class="nav-link" href="#nuestro-equipo">Equipo</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
-
-        <!-- Buscador -->
-        <form class="d-flex mt-2 mt-lg-0 ms-lg-3" role="search" onsubmit="buscarGlobal(event)">
-          <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar..." aria-label="Buscar">
-          <button class="btn btn-light" type="submit">Buscar</button>
-        </form>
       </div>
     </div>
   </nav>
-
-
 
   <!-- Portada -->
   <section class="hero">
@@ -147,8 +171,9 @@
   <!-- Inicio -->
   <section id="inicio" class="py-5 container">
     <h1 class="text-center text-primary fw-bold">Bienvenidos</h1>
-    <p class="text-center"><b> Hospital Regional Dr. Luis A. Vargas ofrece atención médica integral con un equipo profesional comprometido
-      con la salud de nuestra comunidad.</b></p>
+    <p class="text-center"><b> Hospital Regional Dr. Luis A. Vargas ofrece atención médica integral con un equipo
+        profesional comprometido
+        con la salud de nuestra comunidad.</b></p>
   </section>
   <!-- Servicios -->
   <section id="servicios" class="py-5 bg-light">
@@ -1995,28 +2020,30 @@
       <div class="row g-4">
         <!-- Guardia Hospital -->
         <div class="col-md-4">
-          <div class="p-4 border rounded shadow-sm bg-white">
-            <i class="bi bi-hospital fs-1 text-danger"></i>
+          <div class="p-4 border rounded shadow-sm bg-success text-white">
+            <i class="bi bi-hospital fs-1 text-white"></i>
             <h5 class="mt-3">Guardia Hospital</h5>
-            <p class="fs-4 fw-bold text-danger">107</p>
-            <p>Calle Mariano Moreno</p>
+            <p class="fs-4 fw-bold">107</p>
+            <p><br>
+              Calle Mariano Moreno</p>
           </div>
         </div>
         <!-- Policía -->
         <div class="col-md-4">
-          <div class="p-4 border rounded shadow-sm bg-white">
-            <i class="bi bi-shield-shaded fs-1 text-primary"></i>
+          <div class="p-4 border rounded shadow-sm bg-primary text-white">
+            <i class="bi bi-shield-shaded fs-1 text-white"></i>
             <h5 class="mt-3">Policía</h5>
-            <p class="fs-4 fw-bold text-primary">101</p>
-            <p>Calle Fray Mamerto Esquiú Nº 523</p>
+            <p class="fs-4 fw-bold">101</p>
+            <p><br>
+              Calle Fray Mamerto Esquiú Nº 523</p>
           </div>
         </div>
         <!-- Bomberos -->
         <div class="col-md-4">
-          <div class="p-4 border rounded shadow-sm bg-white">
-            <i class="bi bi-fire fs-1 text-warning"></i>
+          <div class="p-4 border rounded shadow-sm bg-danger text-white">
+            <i class="bi bi-fire fs-1 text-white"></i>
             <h5 class="mt-3">Bomberos</h5>
-            <p class="fs-4 fw-bold text-warning">420480 </p>
+            <p class="fs-4 fw-bold">420480</p>
             <p>Calle Manuel Belgrano esquina Avenida Abel Acosta</p>
           </div>
         </div>
@@ -2116,22 +2143,21 @@
     <p>© 2025 Hospital Regional Dr. Luis A. Vargas - Todos los derechos reservados</p>
   </footer>
 
-  <!-- Modal de resultados de búsqueda -->
-  <div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel" aria-hidden="true">
+  <!-- Modal de resultados -->
+  <div class="modal fade" id="resultadoModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="resultadoModalLabel">Resultados de búsqueda</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-header">
+          <h5 class="modal-title">Resultados de búsqueda</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <ul id="listaResultados" class="list-group">
-            <!-- Resultados se insertan dinámicamente aquí -->
-          </ul>
+          <ul id="listaResultados" class="list-group"></ul>
         </div>
       </div>
     </div>
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -2213,17 +2239,22 @@ Profesional: ${profesional}`;
     });
 
 
-    // Función para quitar tildes
-    function quitarTildes(texto) {
-      return texto
+    // Función para quitar tildes y normalizar texto
+    function normalizarTexto(texto) {
+      return texto.toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase();
+        .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function buscarGlobal(event) {
+    // Usado por el buscador del navbar fijo
+    function buscarDesdeTop(event) {
       event.preventDefault();
-      const termino = quitarTildes(document.getElementById('buscador').value.trim());
+      const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
+      buscarGlobalInterno(termino);
+    }
+
+    // Función centralizada de búsqueda
+    function buscarGlobalInterno(termino) {
       const lista = document.getElementById('listaResultados');
       lista.innerHTML = '';
 
@@ -2232,12 +2263,12 @@ Profesional: ${profesional}`;
         return;
       }
 
-      // Buscar en todos los textos relevantes
+      // Buscar en secciones y textos relevantes
       const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
       let coincidencias = [];
 
       elementos.forEach(el => {
-        const texto = quitarTildes(el.textContent);
+        const texto = normalizarTexto(el.textContent);
         if (texto.includes(termino)) {
           const seccion = el.closest('section')?.id || '';
           coincidencias.push({
@@ -2247,6 +2278,7 @@ Profesional: ${profesional}`;
         }
       });
 
+      // Mostrar coincidencias
       if (coincidencias.length > 0) {
         coincidencias.forEach(item => {
           const enlace = document.createElement('li');
@@ -2265,17 +2297,18 @@ Profesional: ${profesional}`;
           };
           lista.appendChild(enlace);
         });
-
-        const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
-        modal.show();
       } else {
         lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
-        const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
-        modal.show();
       }
+
+      // Mostrar modal
+      const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
+      modal.show();
     }
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
