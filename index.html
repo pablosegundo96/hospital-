@@ -96,41 +96,52 @@
     #listaResultados li:hover {
       background-color: #e3f2fd;
     }
+
+    #cooperadora h2 {
+      font-size: 2rem;
+    }
+
+    #cooperadora p,
+    #cooperadora li {
+      font-size: 1rem;
+    }
   </style>
+
 </head>
 
 <body>
 
-<!-- Navbar fijo adaptable -->
-<nav class="navbar navbar-dark bg-success fixed-top py-2 shadow-sm">
-  <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+  <!-- Navbar fijo adaptable -->
+  <nav class="navbar navbar-dark bg-success fixed-top py-2 shadow-sm">
+    <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
 
-    <!-- Teléfono de guardia -->
-    <div class="text-white fw-bold mb-2 mb-md-0">
-      <i class="bi bi-hospital me-2"></i> Guardias 24/7
-      <a href="tel:107" class="text-white text-decoration-none ms-3">
-        <i class="bi bi-telephone me-1"></i> 107
-      </a> /
-      <a href="tel:03838420263" class="text-white text-decoration-none ms-1">
-        (03838) 420263
-      </a>
+      <!-- Teléfono de guardia -->
+      <div class="text-white fw-bold mb-2 mb-md-0">
+        <i class="bi bi-hospital me-2"></i> Guardias 24/7
+        <a href="tel:107" class="text-white text-decoration-none ms-3">
+          <i class="bi bi-telephone me-1"></i> 107
+        </a> /
+        <a href="tel:03838420263" class="text-white text-decoration-none ms-1">
+          (03838) 420263
+        </a>
+      </div>
+
+      <!-- Buscador siempre visible -->
+      <form class="d-flex mt-2 mt-md-0" style="max-width: 300px; width: 100%;" onsubmit="buscarDesdeTop(event)">
+        <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar..." aria-label="Buscar"
+          id="topSearch">
+        <button class="btn btn-light btn-sm" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
     </div>
+  </nav>
 
-    <!-- Buscador siempre visible -->
-    <form class="d-flex mt-2 mt-md-0" style="max-width: 300px; width: 100%;" onsubmit="buscarDesdeTop(event)">
-      <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar..." aria-label="Buscar" id="topSearch">
-      <button class="btn btn-light btn-sm" type="submit">
-        <i class="bi bi-search"></i>
-      </button>
-    </form>
+  <!-- Espaciador para compensar navbar fijo -->
+  <div style="height: 75px;"></div>
 
-  </div>
-</nav>
 
-<!-- Espaciador para compensar navbar fijo -->
-<div style="height: 75px;"></div>
-
-  
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
       <!-- Logo y nombre -->
@@ -175,8 +186,10 @@
         profesional comprometido
         con la salud de nuestra comunidad.</b></p>
   </section>
+
+
   <!-- Servicios -->
-  <section id="servicios" class="py-5 bg-light">
+  <section id="servicios" class="py-5 bg-light" ;>
     <div class="container">
       <h2 class="text-center text-primary fw-bold mb-4">Servicios</h2>
       <div class="row g-4">
@@ -2014,7 +2027,7 @@
   </section>
 
   <!-- Emergencias -->
-  <section id="emergencias" class="py-5" style="background-color: #ffebeb;">
+  <section id="emergencias" class="py-5" style="background-color: #f5f9ff;">
     <div class="container text-center">
       <h2 class="fw-bold text-danger mb-4">Números de Emergencia</h2>
       <div class="row g-4">
@@ -2050,6 +2063,54 @@
       </div>
     </div>
   </section>
+
+  <!-- Cooperadora del Hospital -->
+  <section id="cooperadora" class="py-5" style="background-color: white;">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary d-flex justify-content-center align-items-center">
+          <img src="images/logo-cooperadora.jpeg" alt="Logo Hospital" height="50" class="me-2">
+          Cooperadora del Hospital
+        </h2>
+        <p class="text-muted">Apoyando al Hospital Regional Dr. Luis A. Vargas para mejorar los servicios y la atención.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Descripción -->
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm rounded bg-white h-100">
+            <h5 class="fw-bold text-primary mb-3">¿Quiénes somos?</h5>
+            <p>
+              Somos un grupo de vecinos y colaboradores comprometidos con la salud de nuestra comunidad.
+              Trabajamos junto al hospital para adquirir insumos, mejorar las instalaciones y apoyar al personal de
+              salud.
+            </p>
+          </div>
+        </div>
+
+        <!-- Proyectos -->
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm rounded bg-white h-100">
+            <h5 class="fw-bold text-primary mb-3">Proyectos recientes</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Compra de insumos médicos.</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Reparación y pintura de salas de espera.
+              </li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Donación de equipos informáticos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de contacto -->
+      <div class="text-center mt-4">
+        <a href="https://wa.me/543838476949" target="_blank" class="btn btn-primary">
+          <i class="bi bi-whatsapp me-2"></i> Contactar con la Cooperadora
+        </a>
+      </div>
+    </div>
+  </section>
+
 
   <section id="faq" class="py-5 bg-light">
     <div class="container">
@@ -2109,7 +2170,7 @@
 
       <p><i class="bi bi-telephone"></i> (03838) 425134</p>
       <p><i class="bi bi-envelope"></i> contacto@hospitalvargas.com</p>
-      <p><i class="bi bi-geo-alt"></i> Av 1° de Mayo 263 - Santa Maria Catamarca</p>
+      <p><i class="bi bi-geo-alt"></i> Av 1° de Mayo 263 - Santa Maria - Catamarca</p>
 
       <!-- Redes sociales -->
       <div class="mt-4">
@@ -2140,7 +2201,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Hospital Regional Dr. Luis A. Vargas - Todos los derechos reservados</p>
+    <p> TE QUIERO MUCHO GORDI :)</p>
   </footer>
 
   <!-- Modal de resultados -->
@@ -2239,75 +2300,73 @@ Profesional: ${profesional}`;
     });
 
 
-    // Función para quitar tildes y normalizar texto
-    function normalizarTexto(texto) {
-      return texto.toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+   // Función para quitar tildes y normalizar texto
+  function normalizarTexto(texto) {
+    return texto.toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  // Usado por el buscador del navbar fijo
+  function buscarDesdeTop(event) {
+    event.preventDefault();
+    const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
+    buscarGlobalInterno(termino);
+  }
+
+  // Función centralizada de búsqueda
+  function buscarGlobalInterno(termino) {
+    const lista = document.getElementById('listaResultados');
+    lista.innerHTML = '';
+
+    if (!termino) {
+      alert('Por favor, ingrese un término de búsqueda.');
+      return;
     }
 
-    // Usado por el buscador del navbar fijo
-    function buscarDesdeTop(event) {
-      event.preventDefault();
-      const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
-      buscarGlobalInterno(termino);
-    }
+    // Buscar en secciones y textos relevantes
+    const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
+    let coincidencias = [];
 
-    // Función centralizada de búsqueda
-    function buscarGlobalInterno(termino) {
-      const lista = document.getElementById('listaResultados');
-      lista.innerHTML = '';
-
-      if (!termino) {
-        alert('Por favor, ingrese un término de búsqueda.');
-        return;
-      }
-
-      // Buscar en secciones y textos relevantes
-      const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
-      let coincidencias = [];
-
-      elementos.forEach(el => {
-        const texto = normalizarTexto(el.textContent);
-        if (texto.includes(termino)) {
-          const seccion = el.closest('section')?.id || '';
-          coincidencias.push({
-            texto: el.textContent.trim().substring(0, 120) + '...',
-            id: seccion
-          });
-        }
-      });
-
-      // Mostrar coincidencias
-      if (coincidencias.length > 0) {
-        coincidencias.forEach(item => {
-          const enlace = document.createElement('li');
-          enlace.classList.add('list-group-item', 'list-group-item-action');
-          enlace.style.cursor = 'pointer';
-          enlace.textContent = item.texto;
-          enlace.onclick = () => {
-            const modal = bootstrap.Modal.getInstance(document.getElementById('resultadoModal'));
-            modal.hide();
-            if (item.id) {
-              const destino = document.getElementById(item.id);
-              destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              destino.style.backgroundColor = '#fff3cd';
-              setTimeout(() => { destino.style.backgroundColor = ''; }, 2000);
-            }
-          };
-          lista.appendChild(enlace);
+    elementos.forEach(el => {
+      const texto = normalizarTexto(el.textContent);
+      if (texto.includes(termino)) {
+        const seccion = el.closest('section')?.id || '';
+        coincidencias.push({
+          texto: el.textContent.trim().substring(0, 120) + '...',
+          id: seccion
         });
-      } else {
-        lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
       }
+    });
 
-      // Mostrar modal
-      const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
-      modal.show();
+    // Mostrar coincidencias
+    if (coincidencias.length > 0) {
+      coincidencias.forEach(item => {
+        const enlace = document.createElement('li');
+        enlace.classList.add('list-group-item', 'list-group-item-action');
+        enlace.style.cursor = 'pointer';
+        enlace.textContent = item.texto;
+        enlace.onclick = () => {
+          const modal = bootstrap.Modal.getInstance(document.getElementById('resultadoModal'));
+          modal.hide();
+          if (item.id) {
+            const destino = document.getElementById(item.id);
+            destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            destino.style.backgroundColor = '#fff3cd';
+            setTimeout(() => { destino.style.backgroundColor = ''; }, 2000);
+          }
+        };
+        lista.appendChild(enlace);
+      });
+    } else {
+      lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
     }
 
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
+    modal.show();
+  }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
