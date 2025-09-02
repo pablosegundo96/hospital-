@@ -3,14 +3,19 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hospital Regional Dr. Luis A. Vargas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Hospital Regional Dr. Luis A. Vargas - Servicios, noticias, turnos y más." />
+  <meta name="keywords" content="hospital, salud, turnos, noticias, servicios médicos" />
+  <meta name="author" content="Hospital Regional Dr. Luis A. Vargas" />
+  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg" />
 
+  <!-- Bootstrap y estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Hospital Regional Dr. Luis A. Vargas</title>
 
 
   <style>
@@ -23,13 +28,15 @@
     }
 
     .navbar-nav .nav-link {
-      font-weight: 500;
-      transition: color 0.3s;
+      color: white !important;
+      transition: all 0.3s ease;
     }
 
     .navbar-nav .nav-link:hover {
-      color: #ffd700;
+      text-decoration: underline;
     }
+
+
 
     .hero {
       position: relative;
@@ -56,11 +63,63 @@
       transform: translateY(-50%);
     }
 
-    .card-service i {
-      font-size: 2rem;
-      color: #007acc;
-      margin-bottom: 10px;
+    /* Tarjetas de servicios más compactas */
+    .card-service {
+      padding: 1rem !important;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 220px;
+      /* Ajusta la altura mínima */
     }
+
+    .card-service h5 {
+      font-size: 1.1rem;
+      /* Título más pequeño */
+      margin-top: 0.5rem;
+    }
+
+    .card-service p {
+      font-size: 0.9rem;
+      /* Texto más compacto */
+      margin-bottom: 0.5rem;
+    }
+
+    .card-service i {
+      font-size: 1.8rem;
+      /* Icono un poco más pequeño */
+    }
+
+    .card-service button {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* Hover con sombra y efecto de zoom ligero */
+    .card-service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card .card-img-top {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-text {
+      font-size: 0.85rem;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      transition: transform 0.3s ease;
+    }
+
 
     footer {
       background-color: #005f99;
@@ -122,7 +181,7 @@
           <i class="bi bi-telephone me-1"></i> 107
         </a> /
         <a href="tel:03838420263" class="text-white text-decoration-none ms-1">
-          (03838) 420263
+          03838-420263
         </a>
       </div>
 
@@ -146,8 +205,8 @@
     <div class="container">
       <!-- Logo y nombre -->
       <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-        <img src="images/logo2.jpeg" alt="Logo" height="40" class="me-2 rounded-circle">
-        <span>Hospital Regional Dr. Luis A. Vargas</span>
+        <img src="images/logo2.jpeg" alt="Logo" height="50" class="me-2 rounded-circle">
+        <span style="font-size: 1.1rem;">Hospital Regional Dr. Luis A. Vargas</span>
       </a>
 
       <!-- Botón hamburguesa para móviles -->
@@ -156,20 +215,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links y buscador -->
+      <!-- Links -->
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#turnos">Turnos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-          <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#nuestro-equipo">Equipo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#turnos">Turnos</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#nuestro-equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
 
   <!-- Portada -->
   <section class="hero">
@@ -187,6 +247,121 @@
         con la salud de nuestra comunidad.</b></p>
   </section>
 
+  <!-- Noticias -->
+  <section id="noticias" class="py-5 container">
+    <h2 class="text-center text-primary fw-bold mb-4">Noticias</h2>
+    <div class="row g-4">
+
+      <!--Noticia 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias1.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> #Elegir Saber</h5>
+            <p class="card-text small text-muted">📍Continuamos recorriendo instituciones...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia1Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Noticia 1 -->
+      <div class="modal fade" id="noticia1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>#ElegíSaber</b></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>Hoy nuestro equipo del programa #ElegíSaber llegó al Concejo Deliberante, donde brindamos una charla
+                informativa y realizamos test rápidos de VIH. <br>
+                <br>
+                🧪 Apostamos a la prevención, el acceso a la información y el testeo voluntario como herramientas clave
+                para el cuidado de la salud, sin prejuicios. <br>
+                <br>
+                💪Agradecemos al personal del Concejo por su compromiso, colaboración y participación activa en este
+                proyecto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias2.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> Salud es acortar distancias</h5>
+            <p class="card-text small text-muted">Nuestro equipo médico visitó ...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia2Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 2 -->
+      <div class="modal fade" id="noticia2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Salud es acortar distancias</b> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>🏥Como se realiza habitualmente, nuestro equipo médico visitó el día de ayer, el Mini Hospital de Loro
+                Huasi, brindando atención clínica a vecinos y vecinas de la zona.<br>
+                <br>
+                💚 Acercar la salud es acortar distancias y construir una comunidad más saludable, es fundamental para
+                que todos tengan acceso a controles y tratamientos, brindando atención de calidad en cada rincón de
+                nuestra comunidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 3-->
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias3.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> Atención Primaria de la Salud (APS)</h5>
+            <p class="card-text small text-muted">Comienzan a llegar los peregrinos de San Roque...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia3Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia3 -->
+      <div class="modal fade" id="noticia3Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Atención Primaria de la Salud (APS)</b> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>🙌En el marco de esta celebración tan importante para nuestra comunidad, el Servicio de Atención
+                Primaria de la Salud (APS) de nuestro Hospital acompaña y asiste a los peregrinos que llegan. <br>
+                <br>
+                ✅️En esta oportunidad, en la localidad de La Loma. <br>
+                <br>
+                ✔️Con compromiso y dedicación, nuestro equipo brinda atención médica, controles y el apoyo necesario
+                para cuidar la salud de todos durante estos días de fe y encuentro
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Servicios -->
   <section id="servicios" class="py-5 bg-light" ;>
@@ -1921,111 +2096,6 @@
   </section>
 
 
-  <!-- Noticias -->
-  <section id="noticias" class="py-5 container">
-    <h2 class="text-center text-primary fw-bold mb-4">Noticias</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/noticias1.jpeg" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title"><b> #Elegir Saber </b></h5>
-            <p class="card-text">📍Continuamos recorriendo instituciones...</p>
-            <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#noticia1Modal">Leer más</button>
-          </div>
-        </div>
-      </div>
-      <!-- Modal Noticia 1 -->
-      <div class="modal fade" id="noticia1Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>#ElegíSaber</b></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <p>Hoy nuestro equipo del programa #ElegíSaber llegó al Concejo Deliberante, donde brindamos una charla
-                informativa y realizamos test rápidos de VIH. <br>
-                <br>
-                🧪 Apostamos a la prevención, el acceso a la información y el testeo voluntario como herramientas clave
-                para el cuidado de la salud, sin prejuicios. <br>
-                <br>
-                💪Agradecemos al personal del Concejo por su compromiso, colaboración y participación activa en este
-                proyecto.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--noticia -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/noticias2.jpeg" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title"><b>Salud es acortar distancias</b> </h5>
-            <p class="card-text">Nuestro equipo médico visitó ...</p>
-            <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#noticia2Modal">Leer más</button>
-          </div>
-        </div>
-      </div>
-
-      <!--Noticia 2 -->
-      <div class="modal fade" id="noticia2Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Salud es acortar distancias</b> </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <p>🏥Como se realiza habitualmente, nuestro equipo médico visitó el día de ayer, el Mini Hospital de Loro
-                Huasi, brindando atención clínica a vecinos y vecinas de la zona.<br>
-                <br>
-                💚 Acercar la salud es acortar distancias y construir una comunidad más saludable, es fundamental para
-                que todos tengan acceso a controles y tratamientos, brindando atención de calidad en cada rincón de
-                nuestra comunidad.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Noticia 3-->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="images/noticias3.jpeg" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title"> <b>Atención Primaria de la Salud (APS)</b></h5>
-            <p class="card-text">Comienzan a llegar los peregrinos de San Roque...</p>
-            <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#noticia3Modal">Leer más</button>
-          </div>
-        </div>
-      </div>
-
-      <!--Noticia3 -->
-      <div class="modal fade" id="noticia3Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Atención Primaria de la Salud (APS)</b> </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <p>🙌En el marco de esta celebración tan importante para nuestra comunidad, el Servicio de Atención
-                Primaria de la Salud (APS) de nuestro Hospital acompaña y asiste a los peregrinos que llegan. <br>
-                <br>
-                ✅️En esta oportunidad, en la localidad de La Loma. <br>
-                <br>
-                ✔️Con compromiso y dedicación, nuestro equipo brinda atención médica, controles y el apoyo necesario
-                para cuidar la salud de todos durante estos días de fe y encuentro
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Emergencias -->
   <section id="emergencias" class="py-5" style="background-color: #f5f9ff;">
     <div class="container text-center">
@@ -2041,16 +2111,18 @@
               Calle Mariano Moreno</p>
           </div>
         </div>
+
         <!-- Policía -->
         <div class="col-md-4">
-          <div class="p-4 border rounded shadow-sm bg-primary text-white">
+          <div class="p-4 border rounded shadow-sm text-white" style="background-color:#003366;">
             <i class="bi bi-shield-shaded fs-1 text-white"></i>
             <h5 class="mt-3">Policía</h5>
             <p class="fs-4 fw-bold">101</p>
-            <p><br>
-              Calle Fray Mamerto Esquiú Nº 523</p>
+            <p>Calle Fray Mamerto Esquiú Nº 523</p>
           </div>
         </div>
+
+
         <!-- Bomberos -->
         <div class="col-md-4">
           <div class="p-4 border rounded shadow-sm bg-danger text-white">
@@ -2072,7 +2144,8 @@
           <img src="images/logo-cooperadora.jpeg" alt="Logo Hospital" height="50" class="me-2">
           Cooperadora del Hospital
         </h2>
-        <p class="text-muted">Apoyando al Hospital Regional Dr. Luis A. Vargas para mejorar los servicios y la atención.</p>
+        <p class="text-muted">Apoyando al Hospital Regional Dr. Luis A. Vargas para mejorar los servicios y la atención.
+        </p>
       </div>
 
       <div class="row g-4">
@@ -2300,72 +2373,72 @@ Profesional: ${profesional}`;
     });
 
 
-   // Función para quitar tildes y normalizar texto
-  function normalizarTexto(texto) {
-    return texto.toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-  }
-
-  // Usado por el buscador del navbar fijo
-  function buscarDesdeTop(event) {
-    event.preventDefault();
-    const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
-    buscarGlobalInterno(termino);
-  }
-
-  // Función centralizada de búsqueda
-  function buscarGlobalInterno(termino) {
-    const lista = document.getElementById('listaResultados');
-    lista.innerHTML = '';
-
-    if (!termino) {
-      alert('Por favor, ingrese un término de búsqueda.');
-      return;
+    // Función para quitar tildes y normalizar texto
+    function normalizarTexto(texto) {
+      return texto.toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
     }
 
-    // Buscar en secciones y textos relevantes
-    const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
-    let coincidencias = [];
+    // Usado por el buscador del navbar fijo
+    function buscarDesdeTop(event) {
+      event.preventDefault();
+      const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
+      buscarGlobalInterno(termino);
+    }
 
-    elementos.forEach(el => {
-      const texto = normalizarTexto(el.textContent);
-      if (texto.includes(termino)) {
-        const seccion = el.closest('section')?.id || '';
-        coincidencias.push({
-          texto: el.textContent.trim().substring(0, 120) + '...',
-          id: seccion
-        });
+    // Función centralizada de búsqueda
+    function buscarGlobalInterno(termino) {
+      const lista = document.getElementById('listaResultados');
+      lista.innerHTML = '';
+
+      if (!termino) {
+        alert('Por favor, ingrese un término de búsqueda.');
+        return;
       }
-    });
 
-    // Mostrar coincidencias
-    if (coincidencias.length > 0) {
-      coincidencias.forEach(item => {
-        const enlace = document.createElement('li');
-        enlace.classList.add('list-group-item', 'list-group-item-action');
-        enlace.style.cursor = 'pointer';
-        enlace.textContent = item.texto;
-        enlace.onclick = () => {
-          const modal = bootstrap.Modal.getInstance(document.getElementById('resultadoModal'));
-          modal.hide();
-          if (item.id) {
-            const destino = document.getElementById(item.id);
-            destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            destino.style.backgroundColor = '#fff3cd';
-            setTimeout(() => { destino.style.backgroundColor = ''; }, 2000);
-          }
-        };
-        lista.appendChild(enlace);
+      // Buscar en secciones y textos relevantes
+      const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
+      let coincidencias = [];
+
+      elementos.forEach(el => {
+        const texto = normalizarTexto(el.textContent);
+        if (texto.includes(termino)) {
+          const seccion = el.closest('section')?.id || '';
+          coincidencias.push({
+            texto: el.textContent.trim().substring(0, 120) + '...',
+            id: seccion
+          });
+        }
       });
-    } else {
-      lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
-    }
 
-    // Mostrar modal
-    const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
-    modal.show();
-  }
+      // Mostrar coincidencias
+      if (coincidencias.length > 0) {
+        coincidencias.forEach(item => {
+          const enlace = document.createElement('li');
+          enlace.classList.add('list-group-item', 'list-group-item-action');
+          enlace.style.cursor = 'pointer';
+          enlace.textContent = item.texto;
+          enlace.onclick = () => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('resultadoModal'));
+            modal.hide();
+            if (item.id) {
+              const destino = document.getElementById(item.id);
+              destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              destino.style.backgroundColor = '#fff3cd';
+              setTimeout(() => { destino.style.backgroundColor = ''; }, 2000);
+            }
+          };
+          lista.appendChild(enlace);
+        });
+      } else {
+        lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
+      }
+
+      // Mostrar modal
+      const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
+      modal.show();
+    }
   </script>
 
 </body>
