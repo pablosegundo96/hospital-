@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Área Programática N°12 - Historia, institucional, hospitales, postas sanitarias y noticias." />
+  <meta name="description"
+    content="Área Programática N°12 - Historia, institucional, hospitales, postas sanitarias y noticias." />
   <title>Área Programática N°12</title>
+  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg" class="rounded-circle" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,6 +19,7 @@
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: Arial, sans-serif;
     }
@@ -24,6 +28,7 @@
     .navbar {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .navbar-brand img {
       height: 40px;
       margin-right: 10px;
@@ -34,39 +39,61 @@
       padding-top: 70px;
       padding-bottom: 50px;
     }
-    section h2 {
+
+    section h2,h1 {
       font-weight: bold;
       color: #0d6efd;
+      /* Azul principal */
       text-align: center;
       margin-bottom: 20px;
     }
 
-    /* Portada */
+    /* Bienvenidos */
     #inicio {
-      background: url('images/portada-hospital.jpeg') no-repeat center center/cover;
-      height: 100vh;
-      position: relative;
-      color: white;
-    }
-    #inicio::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    #inicio .container {
-      position: relative;
-      z-index: 1;
+      background-color: #f8f9fa;
+      /* Igual estilo que Historia */
     }
 
-    /* Tarjetas */
-    .hospital-card img,
-    .posta-card img {
+    #inicio p {
+      text-align: center;
+    }
+
+    /* Historia */
+    #historia p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    #historia .btn {
+      margin-top: 15px;
+    }
+
+    /* Tarjetas Hospitales */
+    .hospital-card img {
       height: 200px;
       object-fit: cover;
+    }
+
+    /* Tarjetas Postas (más chicas) */
+    .posta-card img {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .posta-card .card-body {
+      padding: 0.75rem;
+      /* menos padding */
+    }
+
+    .posta-card h6 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .posta-card p {
+      font-size: 0.85rem;
+      margin: 0;
     }
 
     /* Mapa */
@@ -80,15 +107,56 @@
     footer a {
       text-decoration: underline;
     }
+
+    /* Noticias - imágenes uniformes */
+    .noticia-img {
+      height: 200px;
+      object-fit: cover;
+      /* Recorta la imagen manteniendo proporción */
+    }
+
+    /* Noticias */
+    #noticias .card {
+      transition: transform 0.2s;
+    }
+
+    #noticias .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Teléfonos útiles */
+    #telefonos .card {
+      border: 1px solid #e0e0e0;
+    }
+
+    #telefonos .card h5 {
+      font-size: 1rem;
+      color: #0d6efd;
+    }
+
+    #telefonos .card p {
+      font-size: 0.9rem;
+    }
+
+    #telefonos a {
+      color: #0d6efd;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #telefonos a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
 
   <!-- Navbar -->
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="#inicio">
-        <img src="images/logo2.jpeg" alt="Logo" />
+        <img src="images/logo2.jpeg" alt="Logo" height="50" class="me-2 rounded-circle">
         Área Programática N°12
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -99,7 +167,7 @@
           <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
           <li class="nav-item"><a class="nav-link" href="#institucional">Institucional</a></li>
           <li class="nav-item"><a class="nav-link" href="#hospitales">Hospitales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#postas">Postas Sanitarias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#postas">Centros Sanitarios</a></li>
           <li class="nav-item"><a class="nav-link" href="#mapa">Mapa</a></li>
           <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
         </ul>
@@ -108,26 +176,59 @@
   </nav>
 
   <!-- Portada -->
-  <section id="inicio" class="d-flex align-items-center text-center">
+  <!-- Bienvenidos -->
+  <section id="inicio" class="bg-light">
     <div class="container">
-      <h1 class="fw-bold display-4">Bienvenidos al Área Programática N°12</h1>
-      <p class="lead">Conectando hospitales, postas sanitarias y servicios de salud para nuestra comunidad.</p>
+      <h1>Bienvenidos Área Programática N°12</h1>
+      <p class="text-center">Conectando hospitales, Centros Sanitarios y servicios de salud para nuestra comunidad.</p>
     </div>
   </section>
+
 
   <!-- Historia -->
   <section id="historia">
     <div class="container">
       <h2>Nuestra Historia</h2>
-      <p class="text-center">El Área Programática N°12 nació con el compromiso de mejorar la calidad de la atención sanitaria en la región.</p>
+      <p class="text-center">
+        El Área Programática N°12 nació con el compromiso de mejorar la calidad de la atención sanitaria en la región.
+      </p>
+      <div class="text-center">
+        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalHistoria">Leer más</button>
+      </div>
     </div>
   </section>
+
+  <!-- Modal Historia -->
+  <div class="modal fade" id="modalHistoria" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Nuestra Historia</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            El Área Programática N°12 fue creada para garantizar un acceso equitativo y de calidad a la salud.
+            Desde sus inicios hemos trabajado para fortalecer los hospitales, ampliar la cobertura sanitaria en la zona
+            rural
+            y desarrollar programas de prevención y promoción de la salud para toda la comunidad.
+          </p>
+          <p>
+            Actualmente coordinamos una red de hospitales y postas sanitarias que atienden a miles de habitantes,
+            con un equipo de profesionales comprometidos con el bienestar de la población.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Institucional -->
   <section id="institucional" class="bg-light">
     <div class="container">
       <h2>Institucional</h2>
-      <p class="text-center">Somos un equipo de profesionales dedicados a la gestión y coordinación de los servicios de salud.</p>
+      <p class="text-center">Somos un equipo de profesionales dedicados a la gestión y coordinación de los servicios de
+        salud.</p>
 
       <!-- Tarjetas con modales -->
       <div class="row g-4 justify-content-center mt-4">
@@ -183,7 +284,8 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <p>Nuestra misión es brindar servicios de salud de calidad, accesibles y oportunos a toda la comunidad, con una visión de innovación y desarrollo sostenible.</p>
+          <p>Nuestra misión es brindar servicios de salud de calidad, accesibles y oportunos a toda la comunidad, con
+            una visión de innovación y desarrollo sostenible.</p>
         </div>
       </div>
     </div>
@@ -197,7 +299,7 @@
         <div class="col-md-4">
           <a href="index.html" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="images/portada-hospital.jpg" class="card-img-top" alt="Hospital Regional N°1">
+              <img src="https://vallecalchaqui.com/download/multimedia.normal.8d753575d50ce6de.486f7370697479616c5f6e6f726d616c2e6a7067.jpg" class="card-img-top" alt="Hospital Regional N°1">
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
               </div>
@@ -207,9 +309,10 @@
         <div class="col-md-4">
           <a href="hospital2.html" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="https://via.placeholder.com/400x200?text=Hospital+Distrital+N2" class="card-img-top" alt="Hospital Distrital N°2">
+              <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg" class="card-img-top"
+                alt="Hospital Distrital N°2">
               <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Hospital Distrital N°2</h5>
+                <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
               </div>
             </div>
           </a>
@@ -217,9 +320,10 @@
         <div class="col-md-4">
           <a href="hospital3.html" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="https://via.placeholder.com/400x200?text=Hospital+Especialidades" class="card-img-top" alt="Hospital de Especialidades">
+              <img src="https://via.placeholder.com/400x200?text=Hospital+Especialidades" class="card-img-top"
+                alt="Hospital de Especialidades">
               <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Hospital de Especialidades</h5>
+                <h5 class="card-title fw-bold">Mini hospital Loro Huasi</h5>
               </div>
             </div>
           </a>
@@ -231,38 +335,42 @@
   <!-- Postas -->
   <section id="postas" class="bg-light">
     <div class="container">
-      <h2>Postas Sanitarias</h2>
-      <div class="row g-4">
+      <h2>Centros Sanitarios</h2>
+      <div class="row g-3">
         <div class="col-md-4">
           <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/400x200?text=Posta+Sanitaria+1" class="card-img-top" alt="Posta Sanitaria 1">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Posta Sanitaria N°1</h5>
-              <p class="card-text">Ubicación: Calle 123, Ciudad</p>
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+1" class="card-img-top"
+              alt="Posta Sanitaria 1">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">Posta Sanitaria N°1</h6>
+              <p class="card-text small">Ubicación: Calle 123, Ciudad</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/400x200?text=Posta+Sanitaria+2" class="card-img-top" alt="Posta Sanitaria 2">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Posta Sanitaria N°2</h5>
-              <p class="card-text">Ubicación: Av. Salud 456, Ciudad</p>
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+2" class="card-img-top"
+              alt="Posta Sanitaria 2">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">Posta Sanitaria N°2</h6>
+              <p class="card-text small">Ubicación: Av. Salud 456, Ciudad</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/400x200?text=Posta+Sanitaria+3" class="card-img-top" alt="Posta Sanitaria 3">
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Posta Sanitaria N°3</h5>
-              <p class="card-text">Ubicación: Ruta 12, Localidad</p>
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 3">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">Posta Sanitaria N°3</h6>
+              <p class="card-text small">Ubicación: Ruta 12, Localidad</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Mapa -->
   <section id="mapa">
@@ -272,10 +380,183 @@
     </div>
   </section>
 
+  <!-- Noticias -->
+  <section id="noticias" class="bg-light">
+    <div class="container">
+      <h2>Noticias</h2>
+      <div class="row g-4">
+        <!-- Noticia 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/noticias1.jpeg" class="card-img-top noticia-img" alt="Campaña de Vacunación">
+            <div class="card-body">
+              <h5 class="card-title">#Elegir Saber</h5>
+              <p class="card-text">📍Continuamos recorriendo instituciones....</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNoticia1">Leer
+                más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/noticias2.jpeg" class="card-img-top noticia-img" alt="Nuevos Equipos">
+            <div class="card-body">
+              <h5 class="card-title">Salud es acortar distancias</h5>
+              <p class="card-text">Nuestro equipo médico visitó ...</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNoticia2">Leer
+                más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/noticias3.jpeg" class="card-img-top noticia-img" alt="Capacitación">
+            <div class="card-body">
+              <h5 class="card-title">Atencion Primaria de la Salud (APS)</h5>
+              <p class="card-text">Comienzan a llegar los peregrinos de San Roque...</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNoticia3">Leer
+                más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Noticia 1 -->
+  <div class="modal fade" id="modalNoticia1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Campaña de Vacunación</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Hoy nuestro equipo del programa #ElegíSaber llegó al Concejo Deliberante, donde brindamos una charla
+            informativa y realizamos test rápidos de VIH. <br>
+            <br>
+            🧪 Apostamos a la prevención, el acceso a la información y el testeo voluntario como herramientas clave
+            para el cuidado de la salud, sin prejuicios. <br>
+            <br>
+            💪Agradecemos al personal del Concejo por su compromiso, colaboración y participación activa en este
+            proyecto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Noticia 2 -->
+  <div class="modal fade" id="modalNoticia2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Salud es acortar distancias</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>🏥Como se realiza habitualmente, nuestro equipo médico visitó el día de ayer, el Mini Hospital de Loro
+            Huasi, brindando atención clínica a vecinos y vecinas de la zona.<br>
+            <br>
+            💚 Acercar la salud es acortar distancias y construir una comunidad más saludable, es fundamental para
+            que todos tengan acceso a controles y tratamientos, brindando atención de calidad en cada rincón de
+            nuestra comunidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Noticia 3 -->
+  <div class="modal fade" id="modalNoticia3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Capacitación</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>🙌En el marco de esta celebración tan importante para nuestra comunidad, el Servicio de Atención
+            Primaria de la Salud (APS) de nuestro Hospital acompaña y asiste a los peregrinos que llegan. <br>
+            <br>
+            ✅️En esta oportunidad, en la localidad de La Loma. <br>
+            <br>
+            ✔️Con compromiso y dedicación, nuestro equipo brinda atención médica, controles y el apoyo necesario
+            para cuidar la salud de todos durante estos días de fe y encuentro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Teléfonos Útiles -->
+  <section id="telefonos">
+    <div class="container">
+      <h2>Teléfonos Útiles</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Guardia Médica</h5>
+              <p class="card-text"><a href="tel:107">📞 107</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Bomberos</h5>
+              <p class="card-text"><a href="tel:100">📞 100</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Policía</h5>
+              <p class="card-text"><a href="tel:911">📞 911</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Regional N°1</h5>
+              <p class="card-text"><a href="tel:+541145678900">📞 (011) 4567-8900</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Distrital N°2</h5>
+              <p class="card-text"><a href="tel:+541145678910">📞 (011) 4567-8910</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital de Especialidades</h5>
+              <p class="card-text"><a href="tel:+541145678920">📞 (011) 4567-8920</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Footer -->
   <footer class="bg-primary text-white text-center py-3">
     <p class="mb-0">&copy; 2025 Área Programática N°12 | Todos los derechos reservados</p>
-    <small>Contacto: <a href="mailto:info@areaprogramatica12.gob.ar" class="text-white">info@areaprogramatica12.gob.ar</a></small>
+    <small>Contacto: <a href="mailto:info@areaprogramatica12.gob.ar"
+        class="text-white">info@areaprogramatica12.gob.ar</a></small>
   </footer>
 
   <!-- Scripts -->
@@ -283,7 +564,7 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <script>
-     // Inicializar mapa
+    // Inicializar mapa
     const map = L.map('map').setView([-26.6494997, -66.3441922], 9); // Coordenadas de ejemplo
 
     // Cargar capa base
@@ -294,13 +575,24 @@
     // Marcadores: hospitales y postas (ejemplo)
     const locations = [
       { name: "Hospital Regional Dr. Luis A. Vargas", coords: [-26.6971282, -66.0483714] },
-      { name: "Hospital Distrital N°2", coords: [-26.8003059, -66.0695177] },
-      { name: "Hospital de Especialidades", coords: [-34.62, -58.42] },
-      { name: "Posta Sanitaria N°1", coords: [-34.63, -58.43] },
-      { name: "Posta Sanitaria N°2", coords: [-34.64, -58.44] },
-      { name: "Posta Sanitaria N°3", coords: [-34.65, -58.45] }
-    ];
-
+      { name: "Hospital Distrital San Jose", coords: [-26.8003059, -66.0695177] },
+      { name: "Mini Hospital Loro Huasi", coords: [-26.7483107, -66.056121] },
+      { name: "Centro Sanitario Las Mojarras", coords: [-26.661258, -66.0632455] },
+      { name: "Centro Sanitario Fuerte Quemado", coords: [-26.6221588, -66.0501067] },
+      { name: "Centro Sanitario El Puesto", coords: [-26.6470038, -66.0417854] },
+      { name: "Centro Sanitario Chañar Punco", coords: [-26.7513071, -66.0795256] },
+      { name: "Centro Sanitario Famatanca", coords: [-26.7788012, -66.0832663] },
+      { name: "Centro Sanitario San Jose Banda", coords: [-26.8006267, -66.0865066] },
+      { name: "Centro Sanitario Casa de Piedra", coords: [-26.8321878, -66.0918638] },
+      { name: "Centro Sanitario El Desmonte", coords: [-26.8846275,-66.1027685] },
+      { name: "Centro Sanitario Punta De Balasto", coords: [-26.9521571,-66.1353081] },
+      { name: "Centro Sanitario Famabalasto", coords: [-26.8591381,-66.3241951] },
+      { name: "Centro Sanitario La Hoyada", coords: [-26.5428413,-66.3663831] },
+      { name: "Centro Sanitario Toro Yaco", coords: [-26.520453,-66.28829] },
+      { name: "Centro Sanitario El Cajon", coords: [-26.4049704,-66.2638229] },
+      { name: "Centro Sanitario Ovejeria", coords: [-26.2618809,-66.2261989] },
+      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7974494,-66.484595] },
+  ]
     // Agregar marcadores al mapa
     locations.forEach(loc => {
       L.marker(loc.coords).addTo(map)
@@ -309,4 +601,5 @@
     });
   </script>
 </body>
+
 </html>
