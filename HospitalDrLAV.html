@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Hospital Regional Dr. Luis A. Vargas - Servicios, noticias, turnos y más." />
+  <meta name="keywords" content="hospital, salud, turnos, noticias, servicios médicos" />
+  <meta name="author" content="Hospital Regional Dr. Luis A. Vargas" />
+  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg" />
+
+  <!-- Bootstrap y estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Hospital Regional Dr. Luis A. Vargas</title>
+
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-brand span {
+      font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      text-decoration: underline;
+    }
+
+
+
+    .hero {
+      position: relative;
+      height: 350px;
+      background: url('images/portada-hospital.jpeg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Tarjetas de servicios más compactas */
+    .card-service {
+      padding: 1rem !important;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 220px;
+      /* Ajusta la altura mínima */
+    }
+
+    .card-service h5 {
+      font-size: 1.1rem;
+      /* Título más pequeño */
+      margin-top: 0.5rem;
+    }
+
+    .card-service p {
+      font-size: 0.9rem;
+      /* Texto más compacto */
+      margin-bottom: 0.5rem;
+    }
+
+    .card-service i {
+      font-size: 1.8rem;
+      /* Icono un poco más pequeño */
+    }
+
+    .card-service button {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* Hover con sombra y efecto de zoom ligero */
+    .card-service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card .card-img-top {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-text {
+      font-size: 0.85rem;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      transition: transform 0.3s ease;
+    }
+
+
+    footer {
+      background-color: #005f99;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    /* Carrusel */
+    #carouselGaleria {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #carouselGaleria .carousel-inner {
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #carouselGaleria img {
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    #listaResultados li:hover {
+      background-color: #e3f2fd;
+    }
+
+    #cooperadora h2 {
+      font-size: 2rem;
+    }
+
+    #cooperadora p,
+    #cooperadora li {
+      font-size: 1rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar fijo adaptable -->
+  <nav class="navbar navbar-dark bg-success fixed-top py-2 shadow-sm">
+    <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+
+      <!-- Teléfono de guardia -->
+      <div class="text-white fw-bold mb-2 mb-md-0">
+        <i class="bi bi-hospital me-2"></i> Guardias 24/7
+        <a href="tel:107" class="text-white text-decoration-none ms-3">
+          <i class="bi bi-telephone me-1"></i> 107
+        </a> /
+        <a href="tel:03838420263" class="text-white text-decoration-none ms-1">
+          03838-420263
+        </a>
+      </div>
+
+      <!-- Buscador siempre visible -->
+      <form class="d-flex mt-2 mt-md-0" style="max-width: 300px; width: 100%;" onsubmit="buscarDesdeTop(event)">
+        <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar..." aria-label="Buscar"
+          id="topSearch">
+        <button class="btn btn-light btn-sm" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+    </div>
+  </nav>
+
+  <!-- Espaciador para compensar navbar fijo -->
+  <div style="height: 75px;"></div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <!-- Logo y nombre -->
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="area12.html">
+        <img src="images/logo2.jpeg" alt="Logo" height="50" class="me-2 rounded-circle">
+        <span style="font-size: 1.1rem;">Hospital Regional Dr. Luis A. Vargas</span>
+      </a>
+
+      <!-- Botón hamburguesa para móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#turnos">Turnos</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#nuestro-equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Portada -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="fw-bold">Cuidamos tu salud con compromiso</h1>
+      <p>Atención médica integral para toda la familia</p>
+    </div>
+  </section>
+
+  <!-- Inicio -->
+  <section id="inicio" class="py-5 container">
+    <h1 class="text-center text-primary fw-bold">Bienvenidos</h1>
+    <p class="text-center"><b> Hospital Regional Dr. Luis A. Vargas ofrece atención médica integral con un equipo
+        profesional comprometido
+        con la salud de nuestra comunidad.</b></p>
+  </section>
+
+  <!-- Noticias -->
+  <section id="noticias" class="py-5 container">
+    <h2 class="text-center text-primary fw-bold mb-4">Noticias</h2>
+    <div class="row g-4">
+
+      <!--Noticia 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias1.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> #Elegir Saber</h5>
+            <p class="card-text small text-muted">📍Continuamos recorriendo instituciones...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia1Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Noticia 1 -->
+      <div class="modal fade" id="noticia1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>#ElegíSaber</b></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>Hoy nuestro equipo del programa #ElegíSaber llegó al Concejo Deliberante, donde brindamos una charla
+                informativa y realizamos test rápidos de VIH. <br>
+                <br>
+                🧪 Apostamos a la prevención, el acceso a la información y el testeo voluntario como herramientas clave
+                para el cuidado de la salud, sin prejuicios. <br>
+                <br>
+                💪Agradecemos al personal del Concejo por su compromiso, colaboración y participación activa en este
+                proyecto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias2.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> Salud es acortar distancias</h5>
+            <p class="card-text small text-muted">Nuestro equipo médico visitó ...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia2Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 2 -->
+      <div class="modal fade" id="noticia2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Salud es acortar distancias</b> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>🏥Como se realiza habitualmente, nuestro equipo médico visitó el día de ayer, el Mini Hospital de Loro
+                Huasi, brindando atención clínica a vecinos y vecinas de la zona.<br>
+                <br>
+                💚 Acercar la salud es acortar distancias y construir una comunidad más saludable, es fundamental para
+                que todos tengan acceso a controles y tratamientos, brindando atención de calidad en cada rincón de
+                nuestra comunidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia 3-->
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0">
+          <img src="images/noticias3.jpeg" class="card-img-top" alt="Noticia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold"> Atención Primaria de la Salud (APS)</h5>
+            <p class="card-text small text-muted">Comienzan a llegar los peregrinos de San Roque...</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#noticia3Modal">
+              Leer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Noticia3 -->
+      <div class="modal fade" id="noticia3Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Atención Primaria de la Salud (APS)</b> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>🙌En el marco de esta celebración tan importante para nuestra comunidad, el Servicio de Atención
+                Primaria de la Salud (APS) de nuestro Hospital acompaña y asiste a los peregrinos que llegan. <br>
+                <br>
+                ✅️En esta oportunidad, en la localidad de La Loma. <br>
+                <br>
+                ✔️Con compromiso y dedicación, nuestro equipo brinda atención médica, controles y el apoyo necesario
+                para cuidar la salud de todos durante estos días de fe y encuentro
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-5 bg-light" ;>
+    <div class="container">
+      <h2 class="text-center text-primary fw-bold mb-4">Servicios</h2>
+      <div class="row g-4">
+
+        <!-- Clínica Médica -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-heart-pulse fs-1 text-primary"></i>
+            <h5>Clínica Médica</h5>
+            <p>Atención general y especializada para adultos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalClinica">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalClinica" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-heart-pulse me-2 text-primary"></i>Clínica Médica</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios </b><br>
+                <br>
+                <b>Dra. Acosta Tapia Ana Victoria</b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                <b>Dra. Pino Ailicec </b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                <b>Dra. Saracho Araceli</b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                <b>Dr. Contreras Hugo </b><br>
+                Lunes, Martes, Jueves, Viernes: 14hs a 18hs <br>
+                Miercoles: 08hs a 12hs <br>
+                <b>Dr. Maturano Jorge </b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                <b>Dr. Tula Juan Jose </b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+                <b> Dra. Mena Cristina </b><br>
+                Lunes a Viernes: turnos rotativos - Consultar en Mesa de Entrada<br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traumatología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-walking fs-1 text-primary"></i>
+            <h5>Traumatología</h5>
+            <p>Tratamiento de lesiones óseas y musculares.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalTrauma">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalTrauma" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-person-walking me-2 text-primary"></i>Traumatología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dr. Peralta Carlos</b> <br>
+                Lunes: 14:00 a 18:00 <br>
+                Martes: 08:00 a 12:00 <br>
+                Miercoles: 14:00 a 18:00 <br>
+                Jueves: 08:00 a 12:00 <br>
+                <b>Dr. Figueroa Jose </b> <br>
+                Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+                <b>Dr. Pujol Antonio </b> <br>
+                Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+                <b>Dr. Aguilar Santiago </b> <br>
+                Sabado: 08:00 a 12:00 - 14:00 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ginecología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-gender-female fs-1 text-primary"></i>
+            <h5>Ginecología</h5>
+            <p>Salud integral de la mujer.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalGine">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalGine" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-gender-female me-2 text-primary"></i>Ginecología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dra. Peñafiel Patricia</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Dra. Michalzuk Melisa </b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bioimagen -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-camera fs-1 text-primary"></i>
+            <h5>Bioimagen</h5>
+            <p>Diagnóstico por imágenes y resultados online.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalBio">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalBio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-camera me-2 text-primary"></i>Bioimagen</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> <br>
+                Lic. Aciar Beatriz, Lic. Vargas Belen, Lic. Quiroga Patricia, Lic. Herrero Matilde<br>
+                <b>Horarios:</b> <br>
+                Lunes a Viernes 08:00 - 18:00<br>
+                <a href="https://htalvargas.imageweb.ar/login.html" target="_blank">Ver estudios en línea</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laboratorio -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="fa-solid fa-microscope fs-1 text-primary"></i>
+            <h5>Laboratorio</h5>
+            <p>Análisis clínicos de rutina y especializados.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalLab">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalLab" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="fa-solid fa-microscope me-2 text-primary"></i>Laboratorio</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b> <br>
+                Bioq. Herrera Gustavo, Bioq. Brahim Ludmila, Bioq. Meriles Mabel <br>
+                <b>Horarios:</b><br>
+                Lunes a Viernes 07:00 - 12:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Farmacia -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-capsule fs-1 text-primary"></i>
+            <h5>Farmacia</h5>
+            <p>Dispensación de medicamentos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalFarmacia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalFarmacia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-capsule me-2 text-primary"></i>Farmacia</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales:</b><br>
+                Farm. Corsi Veronica<br>
+                <b>Horarios:</b><br>
+                Lunes a Viernes 08:00 a 13:00 - 14:00 a 19:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pediatría -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-emoji-smile fs-1 text-primary"></i>
+            <h5>Pediatría</h5>
+            <p>Atención integral para niños y adolescentes.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalPedia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalPedia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-emoji-smile me-2 text-primary"></i>Pediatría</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dra. Faciano Gabriela</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Dra. Delgado Maria </b> <br>
+                Lunes, Martes, Jueves, Viernes: 08:00 a 12:00<br>
+                <b>Dra. Saracho Mabel</b> <br>
+                Lunes y Martes: 14:00 a 18:00 <br>
+                Miercoles: 08:00 a 12:00 <br>
+                <b>Dra. Fernandez Fernanda</b> <br>
+                Martes y Jueves: 14:00 a 18:00 <br>
+                <b>Dra. Morelli Ayelen</b> <br>
+                Consultar Fecha y Horario <br>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--vacunatorio-->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <!-- Ícono cambiado a escudo médico -->
+            <i class="bi bi-shield-plus fs-1 text-primary"></i>
+            <h5>Vacunatorio</h5>
+            <p>Aplicación de vacunas del calendario y especiales.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalVacunatorio">Ver más</button>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modalVacunatorio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- Ícono también en el modal -->
+                <h5 class="modal-title"><i class="bi bi-shield-plus me-2 text-primary"></i>Vacunatorio</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios de Atención</b> <br>
+                Lunes a Viernes: 07:00 a 13:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Obstetricia -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-hearts fs-1 text-primary"></i>
+            <h5>Obstetricia</h5>
+            <p>Atención y seguimiento durante el embarazo.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalObstetricia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalObstetricia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-person-hearts me-2 text-primary"></i>Obstetricia</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Delgado Yanina</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Condori Alejandra </b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Chaile Maria</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Medina Gerson</b> <br>
+                Lunes a Viernes: 14:00 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio Social -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-people fs-1 text-primary"></i>
+            <h5>Servicio Social</h5>
+            <p>Asesoramiento y gestión de recursos sociales.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalSocial">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalSocial" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-people me-2 text-primary"></i>Servicio Social</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Lopez Bernardina</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nutrición -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-apple fs-1 text-primary"></i>
+            <h5>Nutrición</h5>
+            <p>Asesoramiento nutricional y planes alimentarios.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalNutricion">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalNutricion" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-apple me-2 text-primary"></i>Nutrición</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Salcedo Daniela</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+                <b>Lic. Checabaez Mariel</b> <br>
+                Lunes, Martes y jueves: 14:00 a 18:00<br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Odontología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <!-- Ícono de odontología -->
+            <i class="fa-solid fa-tooth fs-1 text-primary"></i>
+            <h5>Odontología</h5>
+            <p>Tratamientos dentales y de salud bucal.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalOdonto">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Modal Odontología -->
+        <div class="modal fade" id="modalOdonto" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- Ícono también en el título del modal -->
+                <h5 class="modal-title"><i class="fa-solid fa-tooth me-2 text-primary"></i>Odontología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Dra. Palacios Julia</b> <br>
+                Lunes, Miércoles y Viernes: 08:00 a 12:00<br>
+                <b>Dra. Maturano Rosana</b> <br>
+                Martes y Jueves: 08:00 a 12:00 <br>
+                Lunes, Miércoles y Viernes: 14:00 a 18:00 <br>
+                <b>Dra. Chaile María Rosana</b> <br>
+                Lunes a Viernes: 14:00 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fonoaudiología -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-mic fs-1 text-primary"></i>
+            <h5>Fonoaudiología</h5>
+            <p>Evaluación y tratamiento de trastornos del habla y audición.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalFono">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalFono" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-mic me-2 text-primary"></i>Fonoaudiología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Barrenechea Lorena</b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Macial Constanza</b> <br>
+                Martes, jueves y Viernes: 14:00 a 19:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Psicologia-->
+
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person fs-1 text-primary"></i>
+            <h5>Psicologia</h5>
+            <p>Evaluación y tratamiento</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalPsico">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalPsico" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-person me-2 text-primary"></i>Psicologia</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Alvarez Nelly</b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Cruz Elizabeth</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Hematologia-->
+
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-droplet-half fs-1 text-primary"></i>
+            <h5>Hematología</h5>
+            <p>Evaluación y tratamiento</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalHema">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalHema" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-droplet-half me-2 text-primary"></i>Hematología</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Diaz Valeria</b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Medina Ivana</b> <br>
+                Lunes a Viernes: 08:00 a 12:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Kinesiologia-->
+
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-universal-access fs-1 text-primary"></i>
+            <h5>Kinesiologia</h5>
+            <p>Evaluación y tratamiento</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalKine">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalKine" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-universal-access me-2 text-primary"></i>Kinesiologia</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Profesionales y Horarios</b> <br>
+                <b>Lic. Barrionuevo Ana Laura</b> <br>
+                Lunes a Viernes: 08:00 a 12:00<br>
+                <b>Lic. Lujan Maria Agustina</b> <br>
+                Lunes a Viernes: 14 a 18:00 <br>
+                <b>Lic. Burgo Aylen</b> <br>
+                Lunes a Viernes: 14 a 18:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Enfermería -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-thermometer-half fs-1 text-primary"></i>
+            <h5>Consultorio de Enfermería</h5>
+            <p>Inyeciones - Curaciones - Control de peso y talla - Control de signos vitales.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalEnfermeria">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalEnfermeria" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-thermometer-half me-2 text-primary"></i>Enfermería</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios:</b> <br>
+                Lunes a viernes: 06:00 a 10:00 - 14:00 a 18:00<br>
+                Sabados: 06:00 a 14:00 <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internación -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-hospital fs-1 text-primary"></i>
+            <h5>Internación</h5>
+            <p>Salas equipadas para la recuperación de pacientes.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalInternacion">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalInternacion" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-hospital me-2 text-primary"></i>Internación</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios:</b> 24/7 según disponibilidad
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Adultos -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-badge fs-1 text-primary"></i>
+            <h5>Admisión Adultos</h5>
+            <p>Registro y recepción de turnos de adultos</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalAdmAdultos">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalAdmAdultos" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-person-badge me-2 text-primary"></i>Admisión Adultos</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios de recepcion de turnos:</b>
+                Lunes a Viernes, Turno Mañana: 06:00 - 12:00 <br>
+                Lunes a Viernes, Turno Tarde: 12:30 - a 19:00 <br>
+                turnos al numero: 3838476949
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Pediátrica -->
+        <div class="col-md-4">
+          <div class="card card-service text-center p-3">
+            <i class="bi bi-person-badge fs-1 text-primary"></i>
+            <h5>Admisión Ala Pediátrica Dr. Cesar Fernandez</h5>
+            <p>Registro y recepción de turnos pediátricos.</p>
+            <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalAdmPedia">Ver más</button>
+          </div>
+        </div>
+        <div class="modal fade" id="modalAdmPedia" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-person-badge me-2 text-primary"></i>Admisión Ala Pediátrica Dr.
+                  Cesar Fernandez</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <b>Horarios de recepcion de turnos:</b>
+                Lunes a Viernes, Turno Mañana: 06:00 - 11:00 <br>
+                Lunes a Viernes, Turno Tarde: 11:00 - a 13:00<br>
+                turnos al numero: 3838 49-7673
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Turnos -->
+  <section id="turnos" class="py-5 container">
+    <h2 class="text-center text-primary fw-bold mb-4">Solicitar Turno</h2>
+    <form id="turnoForm" class="row g-3">
+      <div class="col-md-6"><label class="form-label">Apellido y Nombre</label><input type="text" class="form-control"
+          id="nombre" required></div>
+      <div class="col-md-6"><label class="form-label">DNI</label><input type="text" class="form-control" id="dni"
+          required></div>
+      <div class="col-md-6"><label class="form-label">Fecha de Nacimiento</label><input type="date" class="form-control"
+          id="fechaNacimiento" required></div>
+      <div class="col-md-6"><label class="form-label">Domicilio</label><input type="text" class="form-control"
+          id="domicilio" required></div>
+      <div class="col-md-6"><label class="form-label">Historia Clínica</label><input type="text" class="form-control"
+          id="historia" required></div>
+      <div class="col-md-6"><label class="form-label">Especialidad</label>
+        <select class="form-select" id="especialidad" required>
+          <option value="">Seleccione</option>
+          <option value="Clinica">Clínica Médica</option>
+          <option value="Psicologia">Psicologia</option>
+          <option value="Pediatria">Pediatría</option>
+          <option value="Odontologia">Odontología</option>
+          <option value="Ginecologia">Ginecología</option>
+          <option value="Nutricion">Nutricion</option>
+          <option value="Traumatologia">Traumatología</option>
+          <option value="Obstetricia">Obstetricia</option>
+        </select>
+      </div>
+      <div class="col-md-6"><label class="form-label">Profesional</label>
+        <select class="form-select" id="profesional" required>
+          <option value="">Seleccione especialidad primero</option>
+        </select>
+      </div>
+      <div class="col-12"><button type="submit" class="btn btn-primary w-100">Enviar por WhatsApp</button></div>
+    </form>
+  </section>
+
+  <!-- Nuestro Equipo -->
+  <section id="nuestro-equipo" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-primary fw-bold mb-4">Nuestro Equipo</h2>
+
+      <div class="accordion" id="accordionEquipo">
+
+        <!-- Administración -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAdmin">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseAdmin">
+              <i class="bi bi-folder me-2 text-primary"></i> Administración
+            </button>
+          </h2>
+          <div id="collapseAdmin" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor37.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Rodriguez Carla</h6>
+                    <p>Administrador hospitalario.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor38.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Cruz Isabel</h6>
+                    <p>Gestión de recursos humanos y organización administrativa.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor38.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Srta. Flores Julieta</h6>
+                    <p>Gestión y organización administrativa.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor38.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Villacorta Hugo</h6>
+                    <p>Coodinador de Derivaciones.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Adultos -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAdmAdultos">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseAdmAdultos">
+              <i class="bi bi-hospital-fill me-2 text-primary"></i> Admisión Adultos
+            </button>
+          </h2>
+          <div id="collapseAdmAdultos" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor57.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Caceres Claudia</h6>
+                    <p>Atención en admisión y gestión de turnos adultos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor58.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Isasmedi Patricia</h6>
+                    <p>Recepción y coordinación de admisión adultos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor58.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Palacios Rodrigo</h6>
+                    <p>Recepción y coordinación de admisión adultos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admisión Pediatría -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAdmPedia">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseAdmPedia">
+              <i class="bi bi-hospital me-2 text-primary"></i> Admisión Pediatría
+            </button>
+          </h2>
+          <div id="collapseAdmPedia" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor55.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Chocobar Daniela</h6>
+                    <p>Responsable de admisión y gestión de turnos pediátricos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agentes Sanitarios -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAgSan">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseAgSan">
+              <i class="bi bi-people me-2 text-primary"></i> Agentes Sanitarios
+            </button>
+          </h2>
+          <div id="collapseAgSan" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/AnaLuzNievaAPS.png" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Pablo Suárez</h6>
+                    <p>Agente sanitario en prevención y promoción comunitaria.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor60.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Camila Duarte</h6>
+                    <p>Agente sanitaria de terreno, visitas domiciliarias.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bioimagen -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingBioimg">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseBioimg">
+              <i class="bi bi-camera me-2 text-primary"></i> Bioimagen
+            </button>
+          </h2>
+          <div id="collapseBioimg" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor27.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Aciar Beatriz</h6>
+                    <p>Especialista en diagnóstico por imágenes, radiología digital.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor28.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Vargas Belen</h6>
+                    <p>Ecografías y tomografías avanzadas.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor28.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Quiroga Patricia</h6>
+                    <p>Ecografías y tomografías avanzadas.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor28.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Herrero Matilde</h6>
+                    <p>Ecografías y tomografías avanzadas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cirugía -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingCirugia">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseCirugia">
+              <i class="bi bi-bandaid me-2 text-primary"></i> Cirugía
+            </button>
+          </h2>
+          <div id="collapseCirugia" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor33.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Ramiro Castro</h6>
+                    <p>Cirujano general con 15 años de experiencia en operaciones complejas.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor34.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Eliana Fernández</h6>
+                    <p>Cirugía mínimamente invasiva y laparoscópica.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clínica Médica -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingClinica">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseClinica">
+              <i class="bi bi-heart-pulse me-2 text-primary"></i> Clínica Médica
+            </button>
+          </h2>
+          <div id="collapseClinica" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/SantaMaria/DraAcosta.jpeg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Acosta Tapia Ana Victoria </b> </h6>
+                    <p> M.P 2988 <br>
+                      Especialista en medicina Clinica Medica y atención de adultos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Pino Flores Ailicec Vanesa </b></h6>
+                    <p> M.P 2683 <br>
+                      Medico Cirujano.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Saracho Araceli </b></h6>
+                    <p> M.P 2683 <br>
+                      Medico Cirujano.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dr. Contreras Hugo </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dr. Maturano Jorge </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b>Dr. Tula Juan Jose </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor2.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Mena Cristina </b></h6>
+                    <p> M.P 2988 <br>
+                      Clínica médica general, experiencia en diagnóstico preventivo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Choferes -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingChoferes">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseChoferes">
+              <i class="bi bi-truck me-2 text-primary"></i> Choferes
+            </button>
+          </h2>
+          <div id="collapseChoferes" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor49.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Manuel González</h6>
+                    <p>Chofer de ambulancias con 20 años de experiencia.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor50.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Roberto Fernández</h6>
+                    <p>Conductor especializado en traslados de emergencias.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Dirección -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDireccion">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseDireccion">
+              <i class="bi bi-building me-2 text-primary"></i> Dirección
+            </button>
+          </h2>
+          <div id="collapseDireccion" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor41.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Villagra Tatiana</h6>
+                    <p>Directora del hospital, especialista en gestión sanitaria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enfermería -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingEnfermeria">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseEnfermeria">
+              <i class="bi bi-heart me-2 text-primary"></i> Enfermería
+            </button>
+          </h2>
+          <div id="collapseEnfermeria" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor35.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Gabriela López</h6>
+                    <p>Supervisora de enfermería, especialista en cuidados críticos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor36.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Tomás Aguirre</h6>
+                    <p>Enfermero clínico especializado en pediatría.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estadística -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingEstadistica">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseEstadistica">
+              <i class="bi bi-bar-chart me-2 text-primary"></i> Estadística
+            </button>
+          </h2>
+          <div id="collapseEstadistica" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor39.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Adrián Romero</h6>
+                    <p>Especialista en estadística aplicada a la salud pública.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor40.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Florencia Navarro</h6>
+                    <p>Gestión de datos sanitarios y análisis epidemiológico.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Esterilización -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingEsteril">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseEsteril">
+              <i class="bi bi-shield-check me-2 text-primary"></i> Esterilización
+            </button>
+          </h2>
+          <div id="collapseEsteril" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor29.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Tec. Jorge Herrera</h6>
+                    <p>Especialista en esterilización hospitalaria y bioseguridad.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor30.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Tec. Florencia Martínez</h6>
+                    <p>Supervisión de procesos de esterilización y control de infecciones.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Farmacia -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFarmacia">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFarmacia">
+              <i class="bi bi-capsule me-2 text-primary"></i> Farmacia
+            </button>
+          </h2>
+          <div id="collapseFarmacia" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor25.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Farm. Lucía Ortega</h6>
+                    <p>Atención farmacéutica y control de medicamentos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor26.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Farm. Daniel Pérez</h6>
+                    <p>Farmacéutico clínico, especialista en farmacología hospitalaria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fonoaudiología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFono">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFono">
+              <i class="bi bi-mic me-2 text-primary"></i> Fonoaudiología
+            </button>
+          </h2>
+          <div id="collapseFono" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor23.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Valeria Campos</h6>
+                    <p>Especialista en lenguaje y trastornos del habla infantil.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor24.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Andrés López</h6>
+                    <p>Fonoaudiólogo especializado en rehabilitación de la voz.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Ginecología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingGine">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseGine">
+              <i class="bi bi-gender-female me-2 text-primary"></i> Ginecología
+            </button>
+          </h2>
+          <div id="collapseGine" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor5.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Ana Suárez</h6>
+                    <p>Salud reproductiva y ginecología preventiva.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor6.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Carlos Medina</h6>
+                    <p>Ginecología oncológica y obstetricia avanzada.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hematología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingHema">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseHema">
+              <i class="bi bi-droplet-half me-2 text-primary"></i> Hematología
+            </button>
+          </h2>
+          <div id="collapseHema" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor13.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Esteban Morales</h6>
+                    <p>Hematólogo especializado en enfermedades de la sangre.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor14.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Cecilia Vázquez</h6>
+                    <p>Especialista en hemoterapia y diagnóstico hematológico.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kinesiología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingKine">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseKine">
+              <i class="bi bi-universal-access me-2 text-primary"></i> Kinesiología
+            </button>
+          </h2>
+          <div id="collapseKine" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/LicBarrionuev.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Kinesiólogo 1">
+                    <h6 class="mt-3">Lic. Barrioniuevo Ana Laura</h6>
+                    <p>M.P 074 <br>
+                      Kinesiolagia y Fisioterapia</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor16.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Kinesiólogo 2">
+                    <h6 class="mt-3">Lic. Carla Gómez</h6>
+                    <p>Kinesióloga experta en recuperación postquirúrgica y terapia respiratoria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laboratorio -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingLab">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseLab">
+              <i class="fa-solid fa-microscope me-2 text-primary"></i> Laboratorio
+            </button>
+          </h2>
+          <div id="collapseLab" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor17.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Profesional de Laboratorio 1">
+                    <h6 class="mt-3">Bioq. Laura Fernández</h6>
+                    <p>Especialista en análisis clínicos y diagnóstico bioquímico.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor18.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Profesional de Laboratorio 2">
+                    <h6 class="mt-3">Bioq. Marcos Pérez</h6>
+                    <p>Experto en microbiología y control de calidad de muestras.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nutrición -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingNutri">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseNutri">
+              <i class="bi bi-apple me-2 text-primary"></i> Nutrición
+            </button>
+          </h2>
+          <div id="collapseNutri" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor21.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Camila Torres</h6>
+                    <p>Nutricionista especializada en alimentación saludable y prevención.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor22.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Marcos Díaz</h6>
+                    <p>Especialista en nutrición clínica y deportiva.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Obstetricia -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingObst">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseObst">
+              <i class="bi bi-person-hearts me-2 text-primary"></i> Obstetricia
+            </button>
+          </h2>
+          <div id="collapseObst" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor7.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Laura Méndez</h6>
+                    <p>Atención integral de embarazos y partos naturales.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor8.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Pedro Ruiz</h6>
+                    <p>Especialista en embarazos de alto riesgo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Odontología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOdonto">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOdonto">
+              <i class="fa-solid fa-tooth me-2 text-primary"></i> Odontología
+            </button>
+          </h2>
+          <div id="collapseOdonto" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img//SantaMaria/DraJuliaPalacios.jpeg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3"> <b> Dra. Palacios Julia Elena </b> </h6>
+                    <p> M.P 354 <br>
+                      Odontologa</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor10.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Martín Salazar</h6>
+                    <p>Ortodoncia y estética dental.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Oftalmología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOftalmo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOftalmo">
+              <i class="bi bi-eyeglasses me-2 text-primary"></i> Oftalmología
+            </button>
+          </h2>
+          <div id="collapseOftalmo" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor31.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Ignacio Rivas</h6>
+                    <p>Especialista en retina y mácula.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor32.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Julieta Molina</h6>
+                    <p>Oftalmóloga especialista en cirugía refractiva y córnea.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pediatría -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPediatria">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsePediatria">
+              <i class="bi bi-emoji-smile me-2 text-primary"></i> Pediatría
+            </button>
+          </h2>
+          <div id="collapsePediatria" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor19.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Pediatra 1">
+                    <h6 class="mt-3">Dra. Gabriela Faciano</h6>
+                    <p>Especialista en atención pediátrica integral y control del niño sano.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor20.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;"
+                      alt="Pediatra 2">
+                    <h6 class="mt-3">Dra. María Delgado</h6>
+                    <p>Pediatra enfocada en seguimiento del crecimiento y desarrollo infantil.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Personal -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPersonal">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsePersonal">
+              <i class="bi bi-people-fill me-2 text-primary"></i> Personal
+            </button>
+          </h2>
+          <div id="collapsePersonal" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor45.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Sofía Medina</h6>
+                    <p>Gestión de recursos humanos y capacitación de personal.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor46.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Andrés Cabrera</h6>
+                    <p>Responsable de bienestar laboral y gestión de equipos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Psicología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPsico">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsePsico">
+              <i class="bi bi-person me-2 text-primary"></i> Psicología
+            </button>
+          </h2>
+          <div id="collapsePsico" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor17.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Verónica Silva</h6>
+                    <p>Psicóloga clínica especialista en terapia individual y familiar.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor18.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Pablo Castro</h6>
+                    <p>Psicólogo especialista en salud mental comunitaria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programas SUMAR -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSumar">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSumar">
+              <i class="bi bi-clipboard2-heart me-2 text-primary"></i> Programa SUMAR
+            </button>
+          </h2>
+          <div id="collapseSumar" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor51.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Paula Fernández</h6>
+                    <p>Coordinadora de Programas SUMAR en atención primaria.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor52.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Martín López</h6>
+                    <p>Especialista en gestión de programas de salud pública.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quirófano -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingQuiro">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseQuiro">
+              <i class="bi bi-scissors me-2 text-primary"></i> Quirófano
+            </button>
+          </h2>
+          <div id="collapseQuiro" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor15.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Guillermo Torres</h6>
+                    <p>Cirujano general con amplia experiencia en procedimientos quirúrgicos.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor16.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. Natalia Ramos</h6>
+                    <p>Anestesióloga y especialista en cuidados perioperatorios.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recupero y Gastos -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingRecupero">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseRecupero">
+              <i class="bi bi-cash-coin me-2 text-primary"></i> Recupero y Gastos
+            </button>
+          </h2>
+          <div id="collapseRecupero" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor53.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">C.P. Laura Méndez</h6>
+                    <p>Contadora especialista en administración hospitalaria.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor54.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Javier Torres</h6>
+                    <p>Responsable de presupuestos y auditoría de gastos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Servicio Social -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSocial">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSocial">
+              <i class="bi bi-people me-2 text-primary"></i> Servicio Social
+            </button>
+          </h2>
+          <div id="collapseSocial" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor19.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Andrea Molina</h6>
+                    <p>Trabajadora social enfocada en acompañamiento a familias.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor20.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Lic. Diego Herrera</h6>
+                    <p>Intervención social en contextos de vulnerabilidad.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Salud Digital -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDigital">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseDigital">
+              <i class="bi bi-laptop me-2 text-primary"></i> Salud Digital
+            </button>
+          </h2>
+          <div id="collapseDigital" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor43.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Ing. Pablo Lobos</h6>
+                    <p>Responsable de salud digital, sistemas hospitalarios y soporte tecnico</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor44.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Tec. Juan Herrera</h6>
+                    <p>Especialista en soporte técnico y salud digital aplicada.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Servicios Generales -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingGenerales">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseGenerales">
+              <i class="bi bi-tools me-2 text-primary"></i> Servicios Generales
+            </button>
+          </h2>
+          <div id="collapseGenerales" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor47.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sr. Pedro López</h6>
+                    <p>Encargado de mantenimiento general del hospital.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor48.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Sra. Ana Ramírez</h6>
+                    <p>Supervisora de higiene y limpieza hospitalaria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traumatología -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTrauma">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTrauma">
+              <i class="bi bi-person-walking me-2 text-primary"></i> Traumatología
+            </button>
+          </h2>
+          <div id="collapseTrauma" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor3.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dr. Juan Pérez</h6>
+                    <p>Especialista en traumatología deportiva y cirugías articulares.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor4.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Dra. María López</h6>
+                    <p>Ortopedia infantil y traumatología general.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vacunatorio -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingVacunatorio">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseVacunatorio">
+              <i class="bi bi-shield-plus me-2 text-primary"></i> Vacunatorio
+            </button>
+          </h2>
+          <div id="collapseVacunatorio" class="accordion-collapse collapse" data-bs-parent="#accordionEquipo">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor61.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Enf. Gabriela Ríos</h6>
+                    <p>Enfermera responsable del plan de vacunación nacional.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center p-3 shadow-sm">
+                    <img src="img/doctor62.jpg" class="rounded-circle mx-auto" style="width:120px;height:120px;" alt="">
+                    <h6 class="mt-3">Enf. Matías Herrera</h6>
+                    <p>Aplicación de vacunas pediátricas y de adultos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Galería -->
+  <section id="galeria" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-primary fw-bold mb-4 text-center">Galería</h2>
+      <div class="row g-3">
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto1.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 1"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto2.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 2"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto3.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 3"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto4.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 4"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto5.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 5"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <img src="images/foto6.jpeg" class="img-fluid rounded shadow-sm" alt="Foto 6"
+            style="max-height: 250px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Emergencias -->
+  <section id="emergencias" class="py-5" style="background-color: #f5f9ff;">
+    <div class="container text-center">
+      <h2 class="fw-bold text-danger mb-4">Números de Emergencia</h2>
+      <div class="row g-4">
+        <!-- Guardia Hospital -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-success text-white">
+            <i class="bi bi-hospital fs-1 text-white"></i>
+            <h5 class="mt-3">Guardia Hospital</h5>
+            <p class="fs-4 fw-bold">107</p>
+            <p><br>
+              Calle Mariano Moreno</p>
+          </div>
+        </div>
+
+        <!-- Policía -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm text-white" style="background-color:#003366;">
+            <i class="bi bi-shield-shaded fs-1 text-white"></i>
+            <h5 class="mt-3">Policía</h5>
+            <p class="fs-4 fw-bold">101</p>
+            <p>Calle Fray Mamerto Esquiú Nº 523</p>
+          </div>
+        </div>
+
+
+        <!-- Bomberos -->
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-danger text-white">
+            <i class="bi bi-fire fs-1 text-white"></i>
+            <h5 class="mt-3">Bomberos</h5>
+            <p class="fs-4 fw-bold">420480</p>
+            <p>Calle Manuel Belgrano esquina Avenida Abel Acosta</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cooperadora del Hospital -->
+  <section id="cooperadora" class="py-5" style="background-color: white;">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary d-flex justify-content-center align-items-center">
+          <img src="images/logo-cooperadora.jpeg" alt="Logo Hospital" height="50" class="me-2">
+          Cooperadora del Hospital
+        </h2>
+        <p class="text-muted">Apoyando al Hospital Regional Dr. Luis A. Vargas para mejorar los servicios y la atención.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Descripción -->
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm rounded bg-white h-100">
+            <h5 class="fw-bold text-primary mb-3">¿Quiénes somos?</h5>
+            <p>
+              Somos un grupo de vecinos y colaboradores comprometidos con la salud de nuestra comunidad.
+              Trabajamos junto al hospital para adquirir insumos, mejorar las instalaciones y apoyar al personal de
+              salud.
+            </p>
+          </div>
+        </div>
+
+        <!-- Proyectos -->
+        <div class="col-md-6">
+          <div class="p-4 shadow-sm rounded bg-white h-100">
+            <h5 class="fw-bold text-primary mb-3">Proyectos recientes</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Compra de insumos médicos.</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Reparación y pintura de salas de espera.
+              </li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Donación de equipos informáticos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de contacto -->
+      <div class="text-center mt-4">
+        <a href="https://wa.me/543838476949" target="_blank" class="btn btn-primary">
+          <i class="bi bi-whatsapp me-2"></i> Contactar con la Cooperadora
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-primary fw-bold mb-4">Preguntas Frecuentes</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse1">
+              ¿Cómo puedo pedir un turno?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Podés solicitar un turno desde la sección <a href="#turnos">Turnos</a> completando el formulario y
+              enviando la información al WhatsApp correspondiente.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse2">
+              ¿En qué horarios atiende el hospital?
+            </button>
+          </h2>
+          <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Nuestro hospital atiende las 24 horas en el área de emergencias y de lunes a viernes de 7:00 a 18:00 en
+              consultorios externos.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse3">
+              ¿Dónde puedo ver mis estudios?
+            </button>
+          </h2>
+          <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Ingresando a la sección <a href="#servicios">Bioimagen</a> podrás acceder a los enlaces para ver tus
+              estudios.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="text-primary fw-bold mb-4">Contacto</h2>
+
+      <p><i class="bi bi-telephone"></i> (03838) 425134</p>
+      <p><i class="bi bi-envelope"></i> contacto@hospitalvargas.com</p>
+      <p><i class="bi bi-geo-alt"></i> Av 1° de Mayo 263 - Santa Maria - Catamarca</p>
+
+      <!-- Redes sociales -->
+      <div class="mt-4">
+        <h5 class="text-primary fw-bold">Síguenos en redes sociales</h5>
+        <a href="https://www.facebook.com/p/Hospital-Dr-Luis-A-Vargas-%C3%81rea-Program%C3%A1tica-N-12-100083126082654/?locale=es_LA"
+          target="_blank" class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-facebook" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://www.instagram.com/hospitalluisavargas.sm?igsh=MXF4bzNzOWZrZTRwag==" target="_blank"
+          class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-instagram" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://wa.me/5491112345678" target="_blank" class="me-3 text-decoration-none text-dark">
+          <i class="bi bi-whatsapp" style="font-size: 1.8rem;"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" class="text-decoration-none text-dark">
+          <i class="bi bi-youtube" style="font-size: 1.8rem;"></i>
+        </a>
+      </div>
+
+      <!-- Mapa -->
+      <div class="ratio ratio-16x9 mt-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.479270065803!2d-66.0490186245679!3d-26.697131776776367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9421e52d34a352bb%3A0x3756acc45c097098!2sHospital%20Santa%20Mar%C3%ADa%20Dr.%20Luis%20Alberto%20Vargas!5e0!3m2!1ses-419!2sar!4v1755179706446!5m2!1ses-419!2sar"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p> © 2025 Hospital Regional Dr. Luis A. Vargas - Todos los derechos reservados </p>
+  </footer>
+
+  <!-- Modal de resultados -->
+  <div class="modal fade" id="resultadoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Resultados de búsqueda</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="listaResultados" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const profesionalesPorEspecialidad = {
+      "Clinica": ["Dra. Acosta Ana", "Dra. Pino Ailicec", "Dra. Saracho Araceli", "Dr. Contreras Hugo", "Dr. Maturano Jorge", "Dra. Mena Cristina", "Dr. Tula Juan Jose"],
+      "Psicologia": ["Lic. Alvarez Nelly", "Lic. Cruz Elizabeth"],
+      "Pediatria": ["Dra. Faciano Gabriela", "Dra. Delgado Maria", "Dra. Saracho Mabel", "Dra. Fernandez Fernanda", "Dra. Morelli Ayelen"],
+      "Odontologia": ["Dra. Palacios Julia", "Dra. Maturano Rosana", "Dra. Chaile Maria Rosana"],
+      "Ginecologia": ["Dra. Patricia Peñafiel", "Dra. Michalzuck Melisa"],
+      "Obstetricia": ["Lic. Delgado Yanina", "Lic. Condori Alejandra", "Lic. Chaile Maria", "Lic. Medina Gerson"],
+      "Traumatologia": ["Dr. Peralta Carlos", "Dr. Pujol Antonio", "Dr. Figueroa Jose", "Dr. Aguilar Santiago"],
+      "Nutricion": ["Lic. Salcedo Daniela", "Lic. Checabaez Mariel"]
+    };
+
+    const especialidadSelect = document.getElementById('especialidad');
+    const profesionalSelect = document.getElementById('profesional');
+
+    especialidadSelect.addEventListener('change', function () {
+      const seleccion = this.value;
+      profesionalSelect.innerHTML = '';
+      if (profesionalesPorEspecialidad[seleccion]) {
+        profesionalSelect.innerHTML = '<option value="">Seleccione</option>';
+        profesionalesPorEspecialidad[seleccion].forEach(nombre => {
+          const option = document.createElement('option');
+          option.value = nombre;
+          option.textContent = nombre;
+          profesionalSelect.appendChild(option);
+        });
+      } else {
+        profesionalSelect.innerHTML = '<option value="">Seleccione especialidad primero</option>';
+      }
+    });
+
+    document.getElementById('turnoForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const dni = document.getElementById('dni').value;
+      const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+      const domicilio = document.getElementById('domicilio').value;
+      const historia = document.getElementById('historia').value;
+      const especialidad = especialidadSelect.value;
+      const profesional = profesionalSelect.value;
+
+      const hoy = new Date();
+      const nacimiento = new Date(fechaNacimiento);
+      let edad = hoy.getFullYear() - nacimiento.getFullYear();
+      const mes = hoy.getMonth() - nacimiento.getMonth();
+      if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) { edad--; }
+
+      const numeroAdultos = "+543838476949";
+      const numeroPediatria = "+543838497673";
+      const numeroOdontologia = "5491112348888";
+
+      if (especialidad === "Pediatria") {
+        if (edad >= 15) { alert("Pediatría es solo para menores de 15 años."); return; }
+        enviarWhatsApp(numeroPediatria);
+      } else if (especialidad === "Clinica") {
+        if (edad < 15) { alert("Clínica Médica es solo para mayores de 15 años."); return; }
+        enviarWhatsApp(numeroAdultos);
+      } else if (especialidad === "Odontologia") {
+        if (edad < 15) { alert("Odontología es solo para mayores de 15 años."); return; }
+        enviarWhatsApp(numeroOdontologia);
+      } else {
+        enviarWhatsApp(numeroAdultos);
+      }
+
+      function enviarWhatsApp(numero) {
+        const mensaje = `Solicitud de turno:
+Nombre: ${nombre}
+DNI: ${dni}
+Fecha Nacimiento: ${fechaNacimiento} (${edad} años)
+Domicilio: ${domicilio}
+Historia Clínica: ${historia}
+Especialidad: ${especialidad}
+Profesional: ${profesional}`;
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+      }
+    });
+
+
+    // Función para quitar tildes y normalizar texto
+    function normalizarTexto(texto) {
+      return texto.toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    // Usado por el buscador del navbar fijo
+    function buscarDesdeTop(event) {
+      event.preventDefault();
+      const termino = normalizarTexto(document.getElementById('topSearch').value.trim());
+      buscarGlobalInterno(termino);
+    }
+
+    // Función centralizada de búsqueda
+    function buscarGlobalInterno(termino) {
+      const lista = document.getElementById('listaResultados');
+      lista.innerHTML = '';
+
+      if (!termino) {
+        alert('Por favor, ingrese un término de búsqueda.');
+        return;
+      }
+
+      // Buscar en secciones y textos relevantes
+      const elementos = document.querySelectorAll('section, h2, h3, p, li, a, span');
+      let coincidencias = [];
+
+      elementos.forEach(el => {
+        const texto = normalizarTexto(el.textContent);
+        if (texto.includes(termino)) {
+          const seccion = el.closest('section')?.id || '';
+          coincidencias.push({
+            texto: el.textContent.trim().substring(0, 120) + '...',
+            id: seccion
+          });
+        }
+      });
+
+      // Mostrar coincidencias
+      if (coincidencias.length > 0) {
+        coincidencias.forEach(item => {
+          const enlace = document.createElement('li');
+          enlace.classList.add('list-group-item', 'list-group-item-action');
+          enlace.style.cursor = 'pointer';
+          enlace.textContent = item.texto;
+          enlace.onclick = () => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('resultadoModal'));
+            modal.hide();
+            if (item.id) {
+              const destino = document.getElementById(item.id);
+              destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              destino.style.backgroundColor = '#fff3cd';
+              setTimeout(() => { destino.style.backgroundColor = ''; }, 2000);
+            }
+          };
+          lista.appendChild(enlace);
+        });
+      } else {
+        lista.innerHTML = `<li class="list-group-item text-danger">No se encontraron resultados para "${termino}".</li>`;
+      }
+
+      // Mostrar modal
+      const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
+      modal.show();
+    }
+  </script>
+
+</body>
+
+</html>

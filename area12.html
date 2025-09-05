@@ -40,7 +40,8 @@
       padding-bottom: 50px;
     }
 
-    section h2,h1 {
+    section h2,
+    h1 {
       font-weight: bold;
       color: #0d6efd;
       /* Azul principal */
@@ -124,6 +125,31 @@
       transform: translateY(-5px);
     }
 
+    #folleteria img {
+      height: 400px;
+      object-fit: contain;
+      /* Muestra todo el folleto sin recortarlo */
+      background: #fff;
+      /* Fondo blanco para que se vea bien */
+      border-radius: 10px;
+    }
+
+    /* Flechas en azul */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-size: 100% 100%;
+      width: 2.5rem;
+      height: 2.5rem;
+      filter: invert(32%) sepia(93%) saturate(2499%) hue-rotate(205deg) brightness(96%) contrast(101%);
+    }
+
+    /* Indicadores en azul */
+    .carousel-indicators [data-bs-target] {
+      background-color: #0d6efd;
+    }
+
+
+
     /* Teléfonos útiles */
     #telefonos .card {
       border: 1px solid #e0e0e0;
@@ -167,7 +193,7 @@
           <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
           <li class="nav-item"><a class="nav-link" href="#institucional">Institucional</a></li>
           <li class="nav-item"><a class="nav-link" href="#hospitales">Hospitales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#postas">Centros Sanitarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#postas">CAPS</a></li>
           <li class="nav-item"><a class="nav-link" href="#mapa">Mapa</a></li>
           <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
         </ul>
@@ -297,9 +323,10 @@
       <h2>Hospitales</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <a href="index.html" class="text-decoration-none text-dark">
+          <a href="HospitalDrLAV.html" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="https://vallecalchaqui.com/download/multimedia.normal.8d753575d50ce6de.486f7370697479616c5f6e6f726d616c2e6a7067.jpg" class="card-img-top" alt="Hospital Regional N°1">
+              <img src="https://vallecalchaqui.com/download/multimedia.normal.8d753575d50ce6de.486f7370697479616c5f6e6f726d616c2e6a7067.jpg"
+                class="card-img-top" alt="Hospital Regional N°1">
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
               </div>
@@ -307,10 +334,10 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="hospital2.html" class="text-decoration-none text-dark">
+          <a href="HospitalSanJose.html" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg" class="card-img-top"
-                alt="Hospital Distrital N°2">
+              <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg"
+                class="card-img-top" alt="Hospital Distrital N°2">
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
               </div>
@@ -335,7 +362,7 @@
   <!-- Postas -->
   <section id="postas" class="bg-light">
     <div class="container">
-      <h2>Centros Sanitarios</h2>
+      <h2>Centros de Atencion Primaria de la Salud</h2>
       <div class="row g-3">
         <div class="col-md-4">
           <div class="card posta-card shadow-sm">
@@ -492,6 +519,45 @@
       </div>
     </div>
   </div>
+  <!-- Folletería -->
+  <section id="folleteria" class="bg-light">
+    <div class="container">
+      <h2>Folletería</h2>
+      <div id="carouselFolleteria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <!-- Folleto 1 -->
+          <div class="carousel-item active">
+            <img src="https://via.placeholder.com/800x400?text=Folleto+1" class="d-block w-100" alt="Folleto 1">
+          </div>
+          <!-- Folleto 2 -->
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400?text=Folleto+2" class="d-block w-100" alt="Folleto 2">
+          </div>
+          <!-- Folleto 3 -->
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400?text=Folleto+3" class="d-block w-100" alt="Folleto 3">
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFolleteria" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFolleteria" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselFolleteria" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselFolleteria" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselFolleteria" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- Teléfonos Útiles -->
@@ -584,15 +650,15 @@
       { name: "Centro Sanitario Famatanca", coords: [-26.7788012, -66.0832663] },
       { name: "Centro Sanitario San Jose Banda", coords: [-26.8006267, -66.0865066] },
       { name: "Centro Sanitario Casa de Piedra", coords: [-26.8321878, -66.0918638] },
-      { name: "Centro Sanitario El Desmonte", coords: [-26.8846275,-66.1027685] },
-      { name: "Centro Sanitario Punta De Balasto", coords: [-26.9521571,-66.1353081] },
-      { name: "Centro Sanitario Famabalasto", coords: [-26.8591381,-66.3241951] },
-      { name: "Centro Sanitario La Hoyada", coords: [-26.5428413,-66.3663831] },
-      { name: "Centro Sanitario Toro Yaco", coords: [-26.520453,-66.28829] },
-      { name: "Centro Sanitario El Cajon", coords: [-26.4049704,-66.2638229] },
-      { name: "Centro Sanitario Ovejeria", coords: [-26.2618809,-66.2261989] },
-      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7974494,-66.484595] },
-  ]
+      { name: "Centro Sanitario El Desmonte", coords: [-26.8846275, -66.1027685] },
+      { name: "Centro Sanitario Punta De Balasto", coords: [-26.9521571, -66.1353081] },
+      { name: "Centro Sanitario Famabalasto", coords: [-26.8591381, -66.3241951] },
+      { name: "Centro Sanitario La Hoyada", coords: [-26.5428413, -66.3663831] },
+      { name: "Centro Sanitario Toro Yaco", coords: [-26.520453, -66.28829] },
+      { name: "Centro Sanitario El Cajon", coords: [-26.4049704, -66.2638229] },
+      { name: "Centro Sanitario Ovejeria", coords: [-26.2618809, -66.2261989] },
+      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7974494, -66.484595] },
+    ]
     // Agregar marcadores al mapa
     locations.forEach(loc => {
       L.marker(loc.coords).addTo(map)
