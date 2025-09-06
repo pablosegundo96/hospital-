@@ -7,7 +7,7 @@
   <meta name="description"
     content="Área Programática N°12 - Historia, institucional, hospitales, postas sanitarias y noticias." />
   <title>Área Programática N°12</title>
-  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg" class="rounded-circle" />
+  <link rel="icon" href="images/area/logo2.jpeg" type="image/jpeg" class="rounded-circle" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -149,30 +149,27 @@
     }
 
 
+/* Teléfonos útiles */
+#telefonos .card {
+  border: none;
+  transition: transform 0.2s;
+}
+#telefonos .card:hover {
+  transform: translateY(-5px);
+}
+#telefonos a {
+  font-weight: bold;
+  text-decoration: none;
+}
+#telefonos a:hover {
+  text-decoration: underline;
+}
 
-    /* Teléfonos útiles */
-    #telefonos .card {
-      border: 1px solid #e0e0e0;
-    }
+/* Azul oscuro para Policía */
+.bg-policia {
+  background-color: #002147 !important;
+}
 
-    #telefonos .card h5 {
-      font-size: 1rem;
-      color: #0d6efd;
-    }
-
-    #telefonos .card p {
-      font-size: 0.9rem;
-    }
-
-    #telefonos a {
-      color: #0d6efd;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    #telefonos a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 
@@ -182,7 +179,7 @@
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="#inicio">
-        <img src="images/logo2.jpeg" alt="Logo" height="50" class="me-2 rounded-circle">
+        <img src="images/area/logo2.jpeg" alt="Logo" height="50" class="me-2 rounded-circle">
         Área Programática N°12
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -201,7 +198,6 @@
     </div>
   </nav>
 
-  <!-- Portada -->
   <!-- Bienvenidos -->
   <section id="inicio" class="bg-light">
     <div class="container">
@@ -345,12 +341,12 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a href="hospital3.html" class="text-decoration-none text-dark">
+          <a href="LOROHUASI" class="text-decoration-none text-dark">
             <div class="card hospital-card shadow-sm">
-              <img src="https://via.placeholder.com/400x200?text=Hospital+Especialidades" class="card-img-top"
-                alt="Hospital de Especialidades">
+              <img src="jpg"
+                class="card-img-top" alt="Hospital Distrital N°2">
               <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Mini hospital Loro Huasi</h5>
+                <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
               </div>
             </div>
           </a>
@@ -369,8 +365,8 @@
             <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+1" class="card-img-top"
               alt="Posta Sanitaria 1">
             <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">Posta Sanitaria N°1</h6>
-              <p class="card-text small">Ubicación: Calle 123, Ciudad</p>
+              <h6 class="card-title fw-bold">CAPS Las Mojarras</h6>
+              <p class="card-text small"></p>
             </div>
           </div>
         </div>
@@ -379,18 +375,188 @@
             <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+2" class="card-img-top"
               alt="Posta Sanitaria 2">
             <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">Posta Sanitaria N°2</h6>
-              <p class="card-text small">Ubicación: Av. Salud 456, Ciudad</p>
+              <h6 class="card-title fw-bold">CAPS Fuerte Quemado</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="images/area/CAPSelPuesto.jpeg" class="card-img-top"
+              alt="Posta Sanitaria 3">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS El Puesto</h6>
+              <p class="card-text small"></p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card posta-card shadow-sm">
             <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 3">
+              alt="Posta Sanitaria 4">
             <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">Posta Sanitaria N°3</h6>
-              <p class="card-text small">Ubicación: Ruta 12, Localidad</p>
+              <h6 class="card-title fw-bold">CAPS Chañar Punco</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 5">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Famatanca</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 6">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS San Jose Banda</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 7">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Casa de Piedra</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 8">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS El Desmonte</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 9">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Punta de Balasto</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 10">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Entre Rios</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 11">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Andalhuala</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 12">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS La Quebrada</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 13">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS La Hoyada</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 14">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Ovejeria</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 15">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Paloma Yaco</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 16">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Toro Yaco</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 17">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS San Antonio El Cajon</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 18">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Famabalasto</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 19">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Agua Amarilla</h6>
+              <p class="card-text small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card posta-card shadow-sm">
+            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
+              alt="Posta Sanitaria 20">
+            <div class="card-body text-center p-2">
+              <h6 class="card-title fw-bold">CAPS Ampajango</h6>
+              <p class="card-text small"></p>
             </div>
           </div>
         </div>
@@ -415,7 +581,7 @@
         <!-- Noticia 1 -->
         <div class="col-md-4">
           <div class="card h-100 shadow-sm text-center">
-            <img src="images/noticias1.jpeg" class="card-img-top noticia-img" alt="Campaña de Vacunación">
+            <img src="images/area/noticias1.jpeg" class="card-img-top noticia-img" alt="Campaña de Vacunación">
             <div class="card-body">
               <h5 class="card-title">#Elegir Saber</h5>
               <p class="card-text">📍Continuamos recorriendo instituciones....</p>
@@ -428,7 +594,7 @@
         <!-- Noticia 2 -->
         <div class="col-md-4">
           <div class="card h-100 shadow-sm text-center">
-            <img src="images/noticias2.jpeg" class="card-img-top noticia-img" alt="Nuevos Equipos">
+            <img src="images/area/noticias2.jpeg" class="card-img-top noticia-img" alt="Nuevos Equipos">
             <div class="card-body">
               <h5 class="card-title">Salud es acortar distancias</h5>
               <p class="card-text">Nuestro equipo médico visitó ...</p>
@@ -441,7 +607,7 @@
         <!-- Noticia 3 -->
         <div class="col-md-4">
           <div class="card h-100 shadow-sm text-center">
-            <img src="images/noticias3.jpeg" class="card-img-top noticia-img" alt="Capacitación">
+            <img src="images/area/noticias3.jpeg" class="card-img-top noticia-img" alt="Capacitación">
             <div class="card-body">
               <h5 class="card-title">Atencion Primaria de la Salud (APS)</h5>
               <p class="card-text">Comienzan a llegar los peregrinos de San Roque...</p>
@@ -519,23 +685,24 @@
       </div>
     </div>
   </div>
-  <!-- Folletería -->
+
+<!-- Folletería -->
   <section id="folleteria" class="bg-light">
     <div class="container">
-      <h2>Folletería</h2>
+      <h2></h2>
       <div id="carouselFolleteria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
           <!-- Folleto 1 -->
           <div class="carousel-item active">
-            <img src="https://via.placeholder.com/800x400?text=Folleto+1" class="d-block w-100" alt="Folleto 1">
+            <img src="images/area/folleto1.jpeg" class="d-block w-100" alt="Folleto 1">
           </div>
           <!-- Folleto 2 -->
           <div class="carousel-item">
-            <img src="https://via.placeholder.com/800x400?text=Folleto+2" class="d-block w-100" alt="Folleto 2">
+            <img src="images/area/folleto2.jpeg" class="d-block w-100" alt="Folleto 2">
           </div>
           <!-- Folleto 3 -->
           <div class="carousel-item">
-            <img src="https://via.placeholder.com/800x400?text=Folleto+3" class="d-block w-100" alt="Folleto 3">
+            <img src="images/area/folleto3.jpeg" class="d-block w-100" alt="Folleto 3">
           </div>
         </div>
 
@@ -560,62 +727,72 @@
   </section>
 
 
-  <!-- Teléfonos Útiles -->
-  <section id="telefonos">
-    <div class="container">
-      <h2>Teléfonos Útiles</h2>
-      <div class="row g-4 text-center">
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Guardia Médica</h5>
-              <p class="card-text"><a href="tel:107">📞 107</a></p>
-            </div>
+<!-- Teléfonos Útiles -->
+<section id="telefonos">
+  <div class="container">
+    <h2>Teléfonos Útiles</h2>
+    <div class="row g-4 text-center justify-content-center">
+      <!-- Guardia Médica -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-white bg-success">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Guardia Médica</h5>
+            <p class="card-text"><a href="tel:107" class="text-white">📞 107</a></p>
           </div>
         </div>
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Bomberos</h5>
-              <p class="card-text"><a href="tel:100">📞 100</a></p>
-            </div>
+      </div>
+      <!-- Policía -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-white bg-policia">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Policía</h5>
+            <p class="card-text"><a href="tel:101" class="text-white">📞 101</a></p>
           </div>
         </div>
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Policía</h5>
-              <p class="card-text"><a href="tel:911">📞 911</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hospital Regional N°1</h5>
-              <p class="card-text"><a href="tel:+541145678900">📞 (011) 4567-8900</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hospital Distrital N°2</h5>
-              <p class="card-text"><a href="tel:+541145678910">📞 (011) 4567-8910</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hospital de Especialidades</h5>
-              <p class="card-text"><a href="tel:+541145678920">📞 (011) 4567-8920</a></p>
-            </div>
+      </div>
+      <!-- Bomberos -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-white bg-danger">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Bomberos</h5>
+            <p class="card-text"><a href="tel:100" class="text-white">📞 100</a></p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Segunda fila -->
+    <div class="row g-4 text-center justify-content-center mt-2">
+      <!-- Hospital Regional N°1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hospital Regional Dr Luis A Vargas</h5>
+            <p class="card-text"><a href="tel:03838425134">📞 (03838) 425134</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital Distrital N°2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
+            <p class="card-text"><a href="tel:03838423042">📞 (03838) 423042</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital de Especialidades -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
+            <p class="card-text"><a href="tel:+541145678920">📞 (03838) 4567-8920</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <!-- Footer -->
