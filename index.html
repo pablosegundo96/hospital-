@@ -77,25 +77,23 @@
     }
 
     /* Tarjetas Postas (más chicas) */
-    .posta-card img {
-      height: 150px;
-      object-fit: cover;
-    }
+    .posta-card {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    .posta-card .card-body {
-      padding: 0.75rem;
-      /* menos padding */
-    }
+.posta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
 
-    .posta-card h6 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
+.posta-card h6 {
+  font-size: 1rem;
+  color: #333;
+}
 
-    .posta-card p {
-      font-size: 0.85rem;
-      margin: 0;
-    }
 
     /* Mapa */
     #map {
@@ -288,9 +286,8 @@
         </div>
         <div class="modal-body">
           <ul>
-            <li><strong>Director General:</strong> Dr. Juan Pérez</li>
-            <li><strong>Subdirectora:</strong> Dra. María Gómez</li>
-            <li><strong>Jefe de Área Técnica:</strong> Lic. Carlos Rodríguez</li>
+            <li><strong>Directora de Area:</strong> Lic. Tatiana Villagra</li>
+            <li><strong>Jefe de Personal:</strong> Lic. Ariel Diaz</li>
           </ul>
         </div>
       </div>
@@ -314,255 +311,167 @@
   </div>
 
   <!-- Hospitales -->
-  <section id="hospitales">
-    <div class="container">
-      <h2>Hospitales</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <a href="HospitalDrLAV.html" class="text-decoration-none text-dark">
-            <div class="card hospital-card shadow-sm">
-              <img src="https://vallecalchaqui.com/download/multimedia.normal.8d753575d50ce6de.486f7370697479616c5f6e6f726d616c2e6a7067.jpg"
-                class="card-img-top" alt="Hospital Regional N°1">
-              <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="HospitalSanJose.html" class="text-decoration-none text-dark">
-            <div class="card hospital-card shadow-sm">
-              <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg"
-                class="card-img-top" alt="Hospital Distrital N°2">
-              <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="LOROHUASI" class="text-decoration-none text-dark">
-            <div class="card hospital-card shadow-sm">
-              <img src="jpg"
-                class="card-img-top" alt="Hospital Distrital N°2">
-              <div class="card-body text-center">
-                <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
-              </div>
-            </div>
-          </a>
+<section id="hospitales">
+  <div class="container">
+    <h2 class="text-center mb-4">Hospitales</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card hospital-card shadow-sm text-center">
+          <img src="images/area/portada-hospital.jpeg"
+            class="card-img-top" alt="Hospital Regional N°1">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
+            <a href="HospitalDrLAV.html" class="btn btn-primary mt-2">Ver más</a>
+          </div>
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="card hospital-card shadow-sm text-center">
+          <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg"
+            class="card-img-top" alt="Hospital Distrital N°2">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
+            <a href="HospitalSanJose.html" class="btn btn-primary mt-2">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card hospital-card shadow-sm text-center">
+          <img src="jpg"
+            class="card-img-top" alt="Hospital Distrital N°3">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
+            <a href="LOROHUASI.html" class="btn btn-primary mt-2">Ver más</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Postas -->
-  <section id="postas" class="bg-light">
-    <div class="container">
-      <h2>Centros de Atencion Primaria de la Salud</h2>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+1" class="card-img-top"
-              alt="Posta Sanitaria 1">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Las Mojarras</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+2" class="card-img-top"
-              alt="Posta Sanitaria 2">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Fuerte Quemado</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="images/area/CAPSelPuesto.jpeg" class="card-img-top"
-              alt="Posta Sanitaria 3">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS El Puesto</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 4">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Chañar Punco</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 5">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Famatanca</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 6">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS San Jose Banda</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 7">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Casa de Piedra</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 8">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS El Desmonte</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 9">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Punta de Balasto</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 10">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Entre Rios</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 11">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Andalhuala</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 12">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS La Quebrada</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 13">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS La Hoyada</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 14">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Ovejeria</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 15">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Paloma Yaco</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 16">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Toro Yaco</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 17">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS San Antonio El Cajon</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 18">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Famabalasto</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 19">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Agua Amarilla</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card posta-card shadow-sm">
-            <img src="https://via.placeholder.com/300x150?text=Posta+Sanitaria+3" class="card-img-top"
-              alt="Posta Sanitaria 20">
-            <div class="card-body text-center p-2">
-              <h6 class="card-title fw-bold">CAPS Ampajango</h6>
-              <p class="card-text small"></p>
-            </div>
-          </div>
+<section id="postas" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Centros de Atención Primaria de la Salud</h2>
+    <div class="row g-3">
+      
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Las Mojarras</h6>
         </div>
       </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Fuerte Quemado</h6>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS El Puesto</h6>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Chañar Punco</h6>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Famatanca</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS San Jose Banda</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Caspinchango</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Casa de Piedra</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Entre Rios</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Andalhuala</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Desmonte</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Punta de Balasto</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Ampajango</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Famabalasto</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Paloma Yaco</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Toro Yaco</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS San Antonio El Cajon</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Ovejeria</h6>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS Agua Amarilla</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card posta-card shadow-sm text-center p-3">
+          <h6 class="fw-bold mb-0">CAPS La Quebrada</h6>
+        </div>
+      </div>
+
+     
+      
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <!-- Mapa -->
@@ -831,10 +740,15 @@
       { name: "Centro Sanitario Punta De Balasto", coords: [-26.9521571, -66.1353081] },
       { name: "Centro Sanitario Famabalasto", coords: [-26.8591381, -66.3241951] },
       { name: "Centro Sanitario La Hoyada", coords: [-26.5428413, -66.3663831] },
-      { name: "Centro Sanitario Toro Yaco", coords: [-26.520453, -66.28829] },
-      { name: "Centro Sanitario El Cajon", coords: [-26.4049704, -66.2638229] },
+      { name: "Centro Sanitario Toro Yaco", coords: [-26.5193392,-66.2682949] },
+      { name: "Centro Sanitario El Cajon", coords: [-26.4083105,-66.2542493] },
       { name: "Centro Sanitario Ovejeria", coords: [-26.2618809, -66.2261989] },
-      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7974494, -66.484595] },
+      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7949271,-66.4836875] },
+      { name: "Centro Sanitario Caspinchango", coords: [-26.7328197,-65.9536854] },
+      { name: "Centro Sanitario Andalhuala", coords: [-26.8822491,-66.047315] },
+      { name: "Centro Sanitario Entre Rios", coords: [-26.8340835,-66.0332694] },
+      { name: "Centro Sanitario Ampajango", coords: [-26.9096248,-66.0837719] },
+      { name: "Centro Sanitario La Quebrada", coords: [-26.6859894,-66.4587969] },
     ]
     // Agregar marcadores al mapa
     locations.forEach(loc => {
