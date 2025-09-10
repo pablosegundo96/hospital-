@@ -78,21 +78,21 @@
 
     /* Tarjetas Postas (más chicas) */
     .posta-card {
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.posta-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
+    .posta-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
 
-.posta-card h6 {
-  font-size: 1rem;
-  color: #333;
-}
+    .posta-card h6 {
+      font-size: 1rem;
+      color: #333;
+    }
 
 
     /* Mapa */
@@ -147,27 +147,29 @@
     }
 
 
-/* Teléfonos útiles */
-#telefonos .card {
-  border: none;
-  transition: transform 0.2s;
-}
-#telefonos .card:hover {
-  transform: translateY(-5px);
-}
-#telefonos a {
-  font-weight: bold;
-  text-decoration: none;
-}
-#telefonos a:hover {
-  text-decoration: underline;
-}
+    /* Teléfonos útiles */
+    #telefonos .card {
+      border: none;
+      transition: transform 0.2s;
+    }
 
-/* Azul oscuro para Policía */
-.bg-policia {
-  background-color: #002147 !important;
-}
+    #telefonos .card:hover {
+      transform: translateY(-5px);
+    }
 
+    #telefonos a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #telefonos a:hover {
+      text-decoration: underline;
+    }
+
+    /* Azul oscuro para Policía */
+    .bg-policia {
+      background-color: #002147 !important;
+    }
   </style>
 </head>
 
@@ -200,7 +202,7 @@
   <section id="inicio" class="bg-light">
     <div class="container">
       <h1>Bienvenidos Área Programática N°12</h1>
-      <p class="text-center">Conectando hospitales, Centros Sanitarios y servicios de salud para nuestra comunidad.</p>
+      <p class="text-center"> <b>hospitales, Centros Sanitarios y servicios de salud para nuestra comunidad.</b></p>
     </div>
   </section>
 
@@ -311,173 +313,171 @@
   </div>
 
   <!-- Hospitales -->
-<section id="hospitales">
-  <div class="container">
-    <h2 class="text-center mb-4">Hospitales</h2>
-    <div class="row g-4">
+  <section id="hospitales">
+    <div class="container">
+      <h2 class="text-center mb-4">Hospitales</h2>
+      <div class="row g-4">
 
-      <div class="col-md-4">
-        <div class="card hospital-card shadow-sm text-center">
-          <img src="images/area/portada-hospital.jpeg"
-            class="card-img-top" alt="Hospital Regional N°1">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
-            <a href="HospitalDrLAV.html" class="btn btn-primary mt-2">Ver más</a>
+        <div class="col-md-4">
+          <div class="card hospital-card shadow-sm text-center">
+            <img src="images/area/portada-hospital.jpeg" class="card-img-top" alt="Hospital Regional N°1">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Regional Dr. Luis A. Vargas</h5>
+              <a href="HospitalDrLAV.html" class="btn btn-primary mt-2">Ver más</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="card hospital-card shadow-sm text-center">
-          <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg"
-            class="card-img-top" alt="Hospital Distrital N°2">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
-            <a href="HospitalSanJose.html" class="btn btn-primary mt-2">Ver más</a>
+        <div class="col-md-4">
+          <div class="card hospital-card shadow-sm text-center">
+            <img src="https://www.catamarcactual.com.ar/u/fotografias/fotosnoticias/2015/12/26/70493.jpg"
+              class="card-img-top" alt="Hospital Distrital N°2">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
+              <a href="HospitalSanJose.html" class="btn btn-primary mt-2">Ver más</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="card hospital-card shadow-sm text-center">
-          <img src="jpg"
-            class="card-img-top" alt="Hospital Distrital N°3">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
-            <a href="LOROHUASI.html" class="btn btn-primary mt-2">Ver más</a>
+        <div class="col-md-4">
+          <div class="card hospital-card shadow-sm text-center">
+            <img src="jpg" class="card-img-top" alt="Hospital Distrital N°3">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
+              <a href="LOROHUASI.html" class="btn btn-primary mt-2">Ver más</a>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Postas -->
-<section id="postas" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Centros de Atención Primaria de la Salud</h2>
-    <div class="row g-3">
-      
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Las Mojarras</h6>
-        </div>
-      </div>
+  <section id="postas" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Centros de Atención Primaria de la Salud</h2>
+      <div class="row g-3">
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Fuerte Quemado</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Las Mojarras</h6>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS El Puesto</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Fuerte Quemado</h6>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Chañar Punco</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS El Puesto</h6>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Famatanca</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Chañar Punco</h6>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS San Jose Banda</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Caspinchango</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Casa de Piedra</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Entre Rios</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Andalhuala</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Desmonte</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Punta de Balasto</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Ampajango</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Famabalasto</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Paloma Yaco</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Toro Yaco</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS San Antonio El Cajon</h6>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Ovejeria</h6>
-        </div>
-      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS Agua Amarilla</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Famatanca</h6>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card posta-card shadow-sm text-center p-3">
-          <h6 class="fw-bold mb-0">CAPS La Quebrada</h6>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS San Jose Banda</h6>
+          </div>
         </div>
-      </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Caspinchango</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Casa de Piedra</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Entre Rios</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Andalhuala</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Desmonte</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Punta de Balasto</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Ampajango</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Famabalasto</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Paloma Yaco</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Toro Yaco</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS San Antonio El Cajon</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Ovejeria</h6>
+          </div>
+        </div>
 
-     
-      
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS Agua Amarilla</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card posta-card shadow-sm text-center p-3">
+            <h6 class="fw-bold mb-0">CAPS La Quebrada</h6>
+          </div>
+        </div>
+
+
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
   <!-- Mapa -->
   <section id="mapa">
     <div class="container">
-      <h2>Mapa de Hospitales y Postas</h2>
+      <h2>Mapa de Hospitales y Caps</h2>
       <div id="map"></div>
     </div>
   </section>
@@ -595,10 +595,10 @@
     </div>
   </div>
 
-<!-- Folletería -->
+  <!-- Folletería -->
   <section id="folleteria" class="bg-light">
     <div class="container">
-      <h2></h2>
+      <h2>Novedades</h2>
       <div id="carouselFolleteria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
           <!-- Folleto 1 -->
@@ -636,72 +636,72 @@
   </section>
 
 
-<!-- Teléfonos Útiles -->
-<section id="telefonos">
-  <div class="container">
-    <h2>Teléfonos Útiles</h2>
-    <div class="row g-4 text-center justify-content-center">
-      <!-- Guardia Médica -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-white bg-success">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Guardia Médica</h5>
-            <p class="card-text"><a href="tel:107" class="text-white">📞 107</a></p>
+  <!-- Teléfonos Útiles -->
+  <section id="telefonos">
+    <div class="container">
+      <h2>Teléfonos Útiles</h2>
+      <div class="row g-4 text-center justify-content-center">
+        <!-- Guardia Médica -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-white bg-success">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Guardia Médica</h5>
+              <p class="card-text"><a href="tel:107" class="text-white">📞 107</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Policía -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-white bg-policia">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Policía</h5>
+              <p class="card-text"><a href="tel:101" class="text-white">📞 101</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Bomberos -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-white bg-danger">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Bomberos</h5>
+              <p class="card-text"><a href="tel:100" class="text-white">📞 100</a></p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Policía -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-white bg-policia">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Policía</h5>
-            <p class="card-text"><a href="tel:101" class="text-white">📞 101</a></p>
-          </div>
-        </div>
-      </div>
-      <!-- Bomberos -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-white bg-danger">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Bomberos</h5>
-            <p class="card-text"><a href="tel:100" class="text-white">📞 100</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Segunda fila -->
-    <div class="row g-4 text-center justify-content-center mt-2">
-      <!-- Hospital Regional N°1 -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Hospital Regional Dr Luis A Vargas</h5>
-            <p class="card-text"><a href="tel:03838425134">📞 (03838) 425134</a></p>
+      <!-- Segunda fila -->
+      <div class="row g-4 text-center justify-content-center mt-2">
+        <!-- Hospital Regional N°1 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Regional Dr Luis A Vargas</h5>
+              <p class="card-text"><a href="tel:03838425134">📞 (03838) 425134</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Hospital Distrital N°2 -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
-            <p class="card-text"><a href="tel:03838423042">📞 (03838) 423042</a></p>
+        <!-- Hospital Distrital N°2 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
+              <p class="card-text"><a href="tel:03838423042">📞 (03838) 423042</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Hospital de Especialidades -->
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
-            <p class="card-text"><a href="tel:+541145678920">📞 (03838) 4567-8920</a></p>
+        <!-- Hospital de Especialidades -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
+              <p class="card-text"><a href="tel:+541145678920">📞 (03838) 4567-8920</a></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Footer -->
@@ -740,15 +740,15 @@
       { name: "Centro Sanitario Punta De Balasto", coords: [-26.9521571, -66.1353081] },
       { name: "Centro Sanitario Famabalasto", coords: [-26.8591381, -66.3241951] },
       { name: "Centro Sanitario La Hoyada", coords: [-26.5428413, -66.3663831] },
-      { name: "Centro Sanitario Toro Yaco", coords: [-26.5193392,-66.2682949] },
-      { name: "Centro Sanitario El Cajon", coords: [-26.4083105,-66.2542493] },
+      { name: "Centro Sanitario Toro Yaco", coords: [-26.5193392, -66.2682949] },
+      { name: "Centro Sanitario El Cajon", coords: [-26.4083105, -66.2542493] },
       { name: "Centro Sanitario Ovejeria", coords: [-26.2618809, -66.2261989] },
-      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7949271,-66.4836875] },
-      { name: "Centro Sanitario Caspinchango", coords: [-26.7328197,-65.9536854] },
-      { name: "Centro Sanitario Andalhuala", coords: [-26.8822491,-66.047315] },
-      { name: "Centro Sanitario Entre Rios", coords: [-26.8340835,-66.0332694] },
-      { name: "Centro Sanitario Ampajango", coords: [-26.9096248,-66.0837719] },
-      { name: "Centro Sanitario La Quebrada", coords: [-26.6859894,-66.4587969] },
+      { name: "Centro Sanitario Agua Amarilla", coords: [-26.7949271, -66.4836875] },
+      { name: "Centro Sanitario Caspinchango", coords: [-26.7328197, -65.9536854] },
+      { name: "Centro Sanitario Andalhuala", coords: [-26.8822491, -66.047315] },
+      { name: "Centro Sanitario Entre Rios", coords: [-26.8340835, -66.0332694] },
+      { name: "Centro Sanitario Ampajango", coords: [-26.9096248, -66.0837719] },
+      { name: "Centro Sanitario La Quebrada", coords: [-26.6859894, -66.4587969] },
     ]
     // Agregar marcadores al mapa
     locations.forEach(loc => {
