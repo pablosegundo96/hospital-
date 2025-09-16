@@ -170,6 +170,27 @@
     .bg-policia {
       background-color: #002147 !important;
     }
+    
+/* Tarjetas de hospitales */
+.card-hospitales {
+  border: 3px solid #000000; /* azul más fuerte */
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+.card-hospitales .card-title {
+  color: #004aad;
+  font-weight: bold;
+}
+
+.card-hospitales:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: #002147; /* azul más oscuro */
+}
+
+
   </style>
 </head>
 
@@ -670,36 +691,38 @@
         </div>
       </div>
 
-      <!-- Segunda fila -->
-      <div class="row g-4 text-center justify-content-center mt-2">
-        <!-- Hospital Regional N°1 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hospital Regional Dr Luis A Vargas</h5>
-              <p class="card-text"><a href="tel:03838425134">📞 (03838) 425134</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- Hospital Distrital N°2 -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
-              <p class="card-text"><a href="tel:03838423042">📞 (03838) 423042</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- Hospital de Especialidades -->
-        <div class="col-md-4">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
-              <p class="card-text"><a href="tel:+541145678920">📞 (03838) 4567-8920</a></p>
-            </div>
-          </div>
-        </div>
+     <!-- Segunda fila -->
+<div class="row g-4 text-center justify-content-center mt-2">
+  <!-- Hospital Regional Dr Luis A Vargas -->
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 card-hospitales">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">Hospital Regional Dr Luis A Vargas</h5>
+        <p class="card-text"><a href="tel:03838425134">📞 (03838) 425134</a></p>
       </div>
+    </div>
+  </div>
+  <!-- Hospital Distrital San Jose -->
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 card-hospitales">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">Hospital Distrital San Jose</h5>
+        <p class="card-text"><a href="tel:03838423042">📞 (03838) 423042</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Mini Hospital Loro Huasi -->
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 card-hospitales">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">Mini Hospital Loro Huasi</h5>
+        <p class="card-text"><a href="tel:+541145678920">📞 (03838) 4567-8920</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   </section>
 
