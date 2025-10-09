@@ -202,6 +202,17 @@
     .carousel-indicators [data-bs-target] {
       background-color: #0d6efd;
     }
+
+   .logo-footer {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  background-color: transparent; /* asegura que no agregue fondo */
+  border-radius: 5px;            /* suaviza bordes si quedan bloques */
+}
+
+
+
   </style>
 
 </head>
@@ -2373,7 +2384,7 @@
           </h2>
           <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Nuestro hospital atiende las 24 horas en el área de emergencias y de lunes a viernes de 7:00 a 18:00 en
+              Nuestro hospital atiende las 24 horas en el área de emergencias y de lunes a viernes de 06:00 a 18:00 en
               consultorios externos.
             </div>
           </div>
@@ -2387,8 +2398,8 @@
           </h2>
           <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Ingresando a la sección <a href="#servicios">Bioimagen</a> podrás acceder a los enlaces para ver tus
-              estudios.
+              Ingresando a este <a href="https://htalvargas.imageweb.ar/login.html">Link</a> podrás acceder a ver
+              tus Radiografias y Mamografias. En Nombre de Usuario deben ingresar el DNI del paciente y en Contraseña la fecha que se realizaron el estudio. por Ejempo( para Radiografias:01/01/25   -   para Mamografias: 01/01/2025).
             </div>
           </div>
         </div>
@@ -2417,12 +2428,6 @@
           class="me-3 text-decoration-none text-dark">
           <i class="bi bi-instagram" style="font-size: 1.8rem;"></i>
         </a>
-        <a href="https://wa.me/5491112345678" target="_blank" class="me-3 text-decoration-none text-dark">
-          <i class="bi bi-whatsapp" style="font-size: 1.8rem;"></i>
-        </a>
-        <a href="https://www.youtube.com/" target="_blank" class="text-decoration-none text-dark">
-          <i class="bi bi-youtube" style="font-size: 1.8rem;"></i>
-        </a>
       </div>
 
       <!-- Mapa -->
@@ -2434,15 +2439,16 @@
     </div>
   </section>
 
-  <footer class="py-3 bg-dark text-white text-center position-relative">
-    <p class="mb-2">© 2025 Hospital Regional Dr. Luis A. Vargas. Todos los derechos reservados.</p>
+<footer class="py-3 bg-dark text-white text-center position-relative">
+  <p class="mb-2">© 2025 Hospital Regional Dr. Luis A. Vargas. Todos los derechos reservados.</p>
 
-    <!-- Botón Volver -->
-    <button class="btn btn-primary btn-sm volver-btn" onclick="window.history.back();">
-      <i class="bi bi-arrow-left me-1"></i> Volver atrás
-    </button>
-  </footer>
+  <!-- Botón Volver -->
+  <button class="btn btn-primary btn-sm volver-btn" onclick="window.history.back();">
+    <i class="bi bi-arrow-left me-1"></i> Volver atrás
+  </button>
 
+
+</footer>
 
   <!-- Modal de resultados -->
   <div class="modal fade" id="resultadoModal" tabindex="-1">
